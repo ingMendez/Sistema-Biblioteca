@@ -28,162 +28,179 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.NoTelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.UsuarioIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // Buscarbutton
+            // EmailTextBox
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(250, 5);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
-            this.Buscarbutton.TabIndex = 33;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(259, 236);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(80, 41);
-            this.Eliminarbutton.TabIndex = 32;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Location = new System.Drawing.Point(126, 236);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
-            this.Guardarbutton.TabIndex = 31;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Location = new System.Drawing.Point(-10, 236);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
-            this.Nuevobutton.TabIndex = 30;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(100, 88);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 20);
-            this.textBox3.TabIndex = 29;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(100, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
-            this.textBox2.TabIndex = 28;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(100, 168);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(252, 17);
-            this.listBox1.TabIndex = 27;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 26;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(100, 16);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 20);
-            this.numericUpDown1.TabIndex = 25;
+            this.EmailTextBox.Location = new System.Drawing.Point(81, 116);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(162, 20);
+            this.EmailTextBox.TabIndex = 84;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 168);
+            this.label5.Location = new System.Drawing.Point(23, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Direccion";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 83;
+            this.label5.Text = "Email";
+            // 
+            // NoTelefonoMaskedTextBox
+            // 
+            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(98, 159);
+            this.NoTelefonoMaskedTextBox.Mask = "(999) 000-0000";
+            this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
+            this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.NoTelefonoMaskedTextBox.TabIndex = 82;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 127);
+            this.label4.Location = new System.Drawing.Point(23, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Numero Telefono";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "No. Telefono";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(249, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 208);
+            this.pictureBox1.TabIndex = 80;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ContraseñaTextBox
+            // 
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(90, 204);
+            this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(108, 20);
+            this.ContraseñaTextBox.TabIndex = 79;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 91);
+            this.label3.Location = new System.Drawing.Point(23, 211);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Cedula";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "Contraseña";
+            // 
+            // NombresTextBox
+            // 
+            this.NombresTextBox.Location = new System.Drawing.Point(81, 74);
+            this.NombresTextBox.Name = "NombresTextBox";
+            this.NombresTextBox.Size = new System.Drawing.Size(162, 20);
+            this.NombresTextBox.TabIndex = 77;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 50);
+            this.label2.Location = new System.Drawing.Point(23, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Nombr Usuario";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Nombres";
+            // 
+            // UsuarioIdNumericUpDown
+            // 
+            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(81, 33);
+            this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
+            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(54, 20);
+            this.UsuarioIdNumericUpDown.TabIndex = 75;
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EliminarButton.Location = new System.Drawing.Point(272, 265);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(107, 23);
+            this.EliminarButton.TabIndex = 74;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GuardarButton.Location = new System.Drawing.Point(139, 265);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(104, 23);
+            this.GuardarButton.TabIndex = 73;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NuevoButton.Location = new System.Drawing.Point(5, 265);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(99, 23);
+            this.NuevoButton.TabIndex = 72;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarButton.Location = new System.Drawing.Point(140, 30);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(103, 23);
+            this.BuscarButton.TabIndex = 71;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Location = new System.Drawing.Point(23, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Usuario ID";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "UsuarioId";
             // 
             // RUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 319);
-            this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numericUpDown1);
+            this.ClientSize = new System.Drawing.Size(400, 309);
+            this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.NoTelefonoMaskedTextBox);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ContraseñaTextBox);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.UsuarioIdNumericUpDown);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.GuardarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label1);
             this.Name = "RUsuario";
             this.Text = "RUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,19 +208,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.Button Eliminarbutton;
-        private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox NoTelefonoMaskedTextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox ContraseñaTextBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox NombresTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown UsuarioIdNumericUpDown;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
     }
 }
