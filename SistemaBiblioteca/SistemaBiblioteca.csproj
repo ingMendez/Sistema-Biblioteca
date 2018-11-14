@@ -54,7 +54,6 @@
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Lector.cs" />
     <Compile Include="Entidades\Libros.cs" />
-    <Compile Include="Entidades\Login.cs" />
     <Compile Include="Entidades\TipoEditorial.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">

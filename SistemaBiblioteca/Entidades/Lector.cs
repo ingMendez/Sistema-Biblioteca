@@ -13,15 +13,19 @@ namespace SistemaBiblioteca.Entidades
         public string Nombre { get; set; }
         public string  Apellido { get; set; }
         public string Cedula { get; set; }
+        public string Telefono { get; set; }
+        public DateTime Fecha { get; set; }
         public string Direccion { get; set; }
     
         public Lector()
         {
             LectorID = 0;
-            Nombre = " ";
-            Apellido = " ";
-            Cedula = " ";
-            Direccion = " ";
+            Nombre =string.Empty;
+            Apellido = string.Empty;
+            Cedula = string.Empty;
+            Direccion = string.Empty;
+            Telefono = string.Empty;
+            Fecha = DateTime.Now;
         }
 
 

@@ -15,5 +15,10 @@ namespace SistemaBiblioteca.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
