@@ -46,13 +46,14 @@
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\LectorBLL.cs" />
+    <Compile Include="BLL\LibroBLL.cs" />
     <Compile Include="BLL\PrestamoBLL.cs" />
     <Compile Include="BLL\RepositoryBase.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Lector.cs" />
     <Compile Include="Entidades\Libros.cs" />
-    <Compile Include="Entidades\Loggin.cs" />
     <Compile Include="Entidades\Login.cs" />
     <Compile Include="Entidades\TipoEditorial.cs" />
     <Compile Include="Entidades\Usuario.cs" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Registros\RCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RCategoria.Designer.cs">
+      <DependentUpon>RCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\REditorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Registros\RCategoria.resx">
+      <DependentUpon>RCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\REditorial.resx">
       <DependentUpon>REditorial.cs</DependentUpon>
     </EmbeddedResource>

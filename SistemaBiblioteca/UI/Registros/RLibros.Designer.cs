@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.NobretextBox = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LibroIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -46,19 +41,18 @@
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.Categoriabutton = new System.Windows.Forms.Button();
             this.CategoriacomboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.EditoracomboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AddEditorial = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.LibroIdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Libro ID";
             // 
             // NobretextBox
             // 
@@ -67,50 +61,12 @@
             this.NobretextBox.Size = new System.Drawing.Size(167, 20);
             this.NobretextBox.TabIndex = 1;
             // 
-            // numericUpDown1
+            // LibroIdnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(91, 40);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 20);
-            this.numericUpDown1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre Libro";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ISBN";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Categoria";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 179);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Descripcion";
+            this.LibroIdnumericUpDown.Location = new System.Drawing.Point(91, 40);
+            this.LibroIdnumericUpDown.Name = "LibroIdnumericUpDown";
+            this.LibroIdnumericUpDown.Size = new System.Drawing.Size(84, 20);
+            this.LibroIdnumericUpDown.TabIndex = 2;
             // 
             // label6
             // 
@@ -121,22 +77,13 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Fecha Creacion";
             // 
-            // label7
+            // FechadateTimePicker
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Casa Editora";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(220, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(220, 16);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.FechadateTimePicker.TabIndex = 9;
             // 
             // Eliminarbutton
             // 
@@ -146,6 +93,7 @@
             this.Eliminarbutton.TabIndex = 17;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -155,6 +103,7 @@
             this.Guardarbutton.TabIndex = 16;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -164,6 +113,7 @@
             this.Nuevobutton.TabIndex = 15;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -173,6 +123,7 @@
             this.Buscarbutton.TabIndex = 18;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ISBNtextBox
             // 
@@ -196,6 +147,7 @@
             this.Categoriabutton.TabIndex = 23;
             this.Categoriabutton.Text = "+";
             this.Categoriabutton.UseVisualStyleBackColor = true;
+            this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
             // 
             // CategoriacomboBox
             // 
@@ -205,15 +157,6 @@
             this.CategoriacomboBox.Size = new System.Drawing.Size(167, 21);
             this.CategoriacomboBox.TabIndex = 24;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(298, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 22);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // EditoracomboBox
             // 
             this.EditoracomboBox.FormattingEnabled = true;
@@ -222,13 +165,87 @@
             this.EditoracomboBox.Size = new System.Drawing.Size(167, 21);
             this.EditoracomboBox.TabIndex = 26;
             // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Casa Editora";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 184);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Descripcion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Categoria";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "ISBN";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Nombre Libro";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Libro ID";
+            // 
+            // AddEditorial
+            // 
+            this.AddEditorial.Location = new System.Drawing.Point(311, 205);
+            this.AddEditorial.Name = "AddEditorial";
+            this.AddEditorial.Size = new System.Drawing.Size(29, 22);
+            this.AddEditorial.TabIndex = 33;
+            this.AddEditorial.Text = "+";
+            this.AddEditorial.UseVisualStyleBackColor = true;
+            this.AddEditorial.Click += new System.EventHandler(this.AddEditorial_Click);
+            // 
             // RLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 331);
+            this.Controls.Add(this.AddEditorial);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.EditoracomboBox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CategoriacomboBox);
             this.Controls.Add(this.Categoriabutton);
             this.Controls.Add(this.DescripciontextBox);
@@ -237,37 +254,25 @@
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.LibroIdnumericUpDown);
             this.Controls.Add(this.NobretextBox);
-            this.Controls.Add(this.label1);
             this.Name = "RLibros";
             this.Text = "RLibros";
             this.Load += new System.EventHandler(this.RLibros_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LibroIdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NobretextBox;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown LibroIdnumericUpDown;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
@@ -276,7 +281,14 @@
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Button Categoriabutton;
         private System.Windows.Forms.ComboBox CategoriacomboBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox EditoracomboBox;
+        private System.Windows.Forms.ErrorProvider SuperErrorProvider;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button AddEditorial;
     }
 }

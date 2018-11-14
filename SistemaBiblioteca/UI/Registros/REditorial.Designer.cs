@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.IDEditorialnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombretextBox = new System.Windows.Forms.TextBox();
@@ -38,7 +39,9 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDEditorialnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,6 +52,7 @@
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // IDEditorialnumericUpDown
             // 
@@ -56,6 +60,7 @@
             this.IDEditorialnumericUpDown.Name = "IDEditorialnumericUpDown";
             this.IDEditorialnumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.IDEditorialnumericUpDown.TabIndex = 1;
+            this.IDEditorialnumericUpDown.ValueChanged += new System.EventHandler(this.IDEditorialnumericUpDown_ValueChanged);
             // 
             // NombretextBox
             // 
@@ -63,6 +68,7 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(120, 20);
             this.NombretextBox.TabIndex = 2;
+            this.NombretextBox.TextChanged += new System.EventHandler(this.NombretextBox_TextChanged);
             // 
             // label2
             // 
@@ -72,6 +78,7 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Direccicon
             // 
@@ -81,14 +88,16 @@
             this.Direccicon.Size = new System.Drawing.Size(52, 13);
             this.Direccicon.TabIndex = 5;
             this.Direccicon.Text = "Direccion";
+            this.Direccicon.Click += new System.EventHandler(this.Direccicon_Click);
             // 
             // DireccionTextBox
             // 
-            this.DireccionTextBox.Location = new System.Drawing.Point(58, 127);
+            this.DireccionTextBox.Location = new System.Drawing.Point(71, 127);
             this.DireccionTextBox.Multiline = true;
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(208, 23);
             this.DireccionTextBox.TabIndex = 4;
+            this.DireccionTextBox.TextChanged += new System.EventHandler(this.DireccionTextBox_TextChanged);
             // 
             // Eliminarbutton
             // 
@@ -108,6 +117,7 @@
             this.Guardarbutton.TabIndex = 16;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -117,6 +127,7 @@
             this.Nuevobutton.TabIndex = 15;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -126,6 +137,11 @@
             this.Buscarbutton.TabIndex = 18;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
             // 
             // REditorial
             // 
@@ -145,6 +161,7 @@
             this.Name = "REditorial";
             this.Text = "REditorial";
             ((System.ComponentModel.ISupportInitialize)(this.IDEditorialnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +179,6 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider SuperErrorProvider;
     }
 }

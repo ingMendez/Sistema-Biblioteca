@@ -9,16 +9,16 @@ using System.Text;
 
 namespace SistemaBiblioteca.BLL
 {
-   public class LectorBLL
+   public  class LibroBLL
     {
-        public static bool Guardar(Lector Lectores)
+        public static bool Guardar(Libros libro)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Lectores.Add(Lectores) != null)
+                if (contexto.Libro.Add(libro) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -33,14 +33,14 @@ namespace SistemaBiblioteca.BLL
         }
 
 
-        public static bool Modificar(Lector lectores)
+        public static bool Modificar(Libros libro)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(lectores).State = EntityState.Modified;
+                contexto.Entry(libro).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -62,9 +62,9 @@ namespace SistemaBiblioteca.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Lector lectore = contexto.Lectores.Find(id);
+                Libros libro = contexto.Libro.Find(id);
 
-                contexto.Lectores.Remove(lectore);
+                contexto.Libro.Remove(libro);
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -80,31 +80,31 @@ namespace SistemaBiblioteca.BLL
         }
 
 
-        public static Lector Buscar(int id)
+        public static Libros Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Lector lector = new Lector();
+            Libros libros = new Libros();
             try
             {
-                lector = contexto.Lectores.Find(id);
+                libros = contexto.Libro.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            return lector;
+            return libros;
         }
 
 
-        public static List<Lector> GetList(Expression<Func<Lector, bool>> expression)
+        public static List<Libros> GetList(Expression<Func<Libros, bool>> expression)
         {
-            List<Lector> lector = new List<Lector>();
+            List<Libros> libro = new List<Libros>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lector = contexto.Lectores.Where(expression).ToList();
+                libro = contexto.Libro.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -112,10 +112,18 @@ namespace SistemaBiblioteca.BLL
                 throw;
             }
 
-            return lector;
+            return libro;
         }
 
+        public static DateTime PorcientoGanancia(DateTime vencimiento)
+        {
+            DateTime final;
+
+            final = vencimiento ;
+
+
+            return final;
+        }
 
     }
 }
-

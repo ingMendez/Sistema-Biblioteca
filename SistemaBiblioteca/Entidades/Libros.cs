@@ -12,9 +12,9 @@ namespace SistemaBiblioteca.Entidades
         public int LibroID { get; set; }
         public string NombreLibro { get; set; }
         public string ISBN{ get; set; }
-        public string  Categoria { get; set; }
+        public int  CategoriaID { get; set; }
         public string Descripcion { get; set; }
-        public string  NombreEditorial { get; set; }
+        public int EditarialID { get; set; }
         public DateTime FechaImpresion { get; set; }
 
         public Libros()
@@ -22,9 +22,9 @@ namespace SistemaBiblioteca.Entidades
             LibroID = 0;
             NombreLibro = "";
             ISBN = "";
-            Categoria = " ";
+            CategoriaID =0;
             Descripcion = " ";
-            NombreEditorial = "";
+            EditarialID = 0;
             FechaImpresion = DateTime.Now;
 
     }

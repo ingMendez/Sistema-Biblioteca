@@ -12,43 +12,43 @@ using System.Windows.Forms;
 
 namespace SistemaBiblioteca.UI.Registros
 {
-    public partial class REditorial : Form
+    public partial class RCategoria : Form
     {
-        private RepositorioBase<TipoEditorial> repos;
-        public REditorial()
+        private RepositorioBase<Categoria> repos;
+        public RCategoria()
         {
             InitializeComponent();
         }
         private void Limpiar()
         {
             SuperErrorProvider.Clear();
-            IDEditorialnumericUpDown.Value = 0;
+            IDCategorianumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
-            DireccionTextBox.Text = string.Empty;
+            DescipcionTextBox.Text = string.Empty;
         }
 
-        private TipoEditorial LlenaClase()
+        private Categoria LlenaClase()
         {
-            TipoEditorial tipo = new TipoEditorial()
+            Categoria tipo = new Categoria()
             {
-                EditarialID = Convert.ToInt32(IDEditorialnumericUpDown.Value),
+                CategoriaID = Convert.ToInt32(IDCategorianumericUpDown.Value),
                 Nombre = NombretextBox.Text,
-                Dirrecion = DireccionTextBox.Text
+                descripcion = DescipcionTextBox.Text
             };
             return tipo;
         }
 
-        private void LlenaCampo(TipoEditorial tipo)
+        private void LlenaCampo(Categoria tipo)
         {
-            IDEditorialnumericUpDown.Value = tipo.EditarialID;
+            IDCategorianumericUpDown.Value = tipo.CategoriaID;
             NombretextBox.Text = tipo.Nombre;
-            DireccionTextBox.Text = tipo.Dirrecion;
+            DescipcionTextBox.Text = tipo.descripcion;
         }
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            repos = new RepositorioBase<TipoEditorial>(new DAL.Contexto());
-            TipoEditorial tipo = repos.Buscar((int)IDEditorialnumericUpDown.Value);
+            repos = new RepositorioBase<Categoria>(new Contexto());
+            Categoria tipo = repos.Buscar((int)IDCategorianumericUpDown.Value);
             return (tipo != null);
         }
 
@@ -66,10 +66,10 @@ namespace SistemaBiblioteca.UI.Registros
                 NombretextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(DireccionTextBox.Text))
+            if (string.IsNullOrWhiteSpace(DescipcionTextBox.Text))
             {
-                SuperErrorProvider.SetError(DireccionTextBox, "El Campo no debe estar vacio");
-                DireccionTextBox.Focus();
+                SuperErrorProvider.SetError(DescipcionTextBox, "El Campo no debe estar vacio");
+                DescipcionTextBox.Focus();
                 paso = false;
             }
             return paso;
@@ -82,15 +82,15 @@ namespace SistemaBiblioteca.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            repos = new RepositorioBase<TipoEditorial>(new Contexto());
-            TipoEditorial tipo;
+            repos = new RepositorioBase<Categoria>(new Contexto());
+            Categoria tipo;
             bool paso = false;
             tipo = LlenaClase();
             if (!validar())
             {
                 return;
             }
-            if (IDEditorialnumericUpDown.Value == 0)
+            if (IDCategorianumericUpDown.Value == 0)
             {
                 paso = repos.Guardar(tipo);
             }
@@ -98,7 +98,7 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificr un editorial no existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se puede modificar una Categoria  no existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 paso = repos.Modificar(tipo);
@@ -111,79 +111,52 @@ namespace SistemaBiblioteca.UI.Registros
             }
             else
             {
-                MessageBox.Show("No se Guardo El Editorial!!", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se Guardo la Categoria!!", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repos = new RepositorioBase<TipoEditorial>(new Contexto());
-            int.TryParse(IDEditorialnumericUpDown.Text, out int id);
-            TipoEditorial tipos = new TipoEditorial();
+            repos = new RepositorioBase<Categoria>(new Contexto());
+            int.TryParse(IDCategorianumericUpDown.Text, out int id);
+            Categoria tipos = new Categoria();
             tipos = repos.Buscar(id);
 
             if (tipos != null)
             {
-                MessageBox.Show("Editorial Encontrado.!!", "Exito!!!", MessageBoxButtons.OK);
+                MessageBox.Show("Categoria Encontrado.!!", "Exito!!!", MessageBoxButtons.OK);
                 LlenaCampo(tipos);
             }
             else
             {
-                MessageBox.Show("Editorial no Encontrada", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Categoria no Encontrada", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            repos = new RepositorioBase<TipoEditorial>(new Contexto());
-            int.TryParse(IDEditorialnumericUpDown.Text, out int id);
+            repos = new RepositorioBase<Categoria>(new Contexto());
+            int.TryParse(IDCategorianumericUpDown.Text, out int id);
             if (!ExisteEnLaBaseDeDatos())
             {
-                SuperErrorProvider.SetError(IDEditorialnumericUpDown, "Esta Editora No Existe");
-                IDEditorialnumericUpDown.Focus();
+                SuperErrorProvider.SetError(IDCategorianumericUpDown, "Esta Categoria No Existe");
+                IDCategorianumericUpDown.Focus();
                 return;
             }
             if (repos.Eliminar(id))
             {
-                MessageBox.Show("Editorial Eliminado!!", "Exitoso!!!", MessageBoxButtons.OK);
+                MessageBox.Show("Categoria Eliminada!!", "Exitoso!!!", MessageBoxButtons.OK);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar El Tipo De Cuenta!!", "Fallo!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo eliminar El Tipo De Categoria!!", "Fallo!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void Direccicon_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void DireccionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NombretextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IDEditorialnumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
-
