@@ -34,17 +34,17 @@
             this.PrestamoId = new System.Windows.Forms.Label();
             this.LectorcomboBox = new System.Windows.Forms.ComboBox();
             this.LibrocomboBox = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.prestamoidnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PrestamoDetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.RemoverButton = new System.Windows.Forms.Button();
             this.AgregarButtton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,28 +99,28 @@
             this.LibrocomboBox.Size = new System.Drawing.Size(121, 21);
             this.LibrocomboBox.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // FechadateTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(362, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(362, 24);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(101, 20);
+            this.FechadateTimePicker.TabIndex = 6;
             // 
-            // numericUpDown1
+            // prestamoidnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(105, 25);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown1.TabIndex = 7;
+            this.prestamoidnumericUpDown.Location = new System.Drawing.Point(105, 25);
+            this.prestamoidnumericUpDown.Name = "prestamoidnumericUpDown";
+            this.prestamoidnumericUpDown.Size = new System.Drawing.Size(76, 20);
+            this.prestamoidnumericUpDown.TabIndex = 7;
             // 
-            // dataGridView1
+            // PrestamoDetalleDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(406, 203);
-            this.dataGridView1.TabIndex = 8;
+            this.PrestamoDetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PrestamoDetalleDataGridView.Location = new System.Drawing.Point(41, 157);
+            this.PrestamoDetalleDataGridView.Name = "PrestamoDetalleDataGridView";
+            this.PrestamoDetalleDataGridView.Size = new System.Drawing.Size(406, 203);
+            this.PrestamoDetalleDataGridView.TabIndex = 8;
             // 
             // RemoverButton
             // 
@@ -171,6 +171,7 @@
             this.NuevoButton.TabIndex = 88;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
@@ -194,9 +195,9 @@
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.RemoverButton);
             this.Controls.Add(this.AgregarButtton);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.PrestamoDetalleDataGridView);
+            this.Controls.Add(this.prestamoidnumericUpDown);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.LibrocomboBox);
             this.Controls.Add(this.LectorcomboBox);
             this.Controls.Add(this.PrestamoId);
@@ -205,8 +206,8 @@
             this.Controls.Add(this.label1);
             this.Name = "RPrestamo";
             this.Text = "RPrestamo";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,9 +221,9 @@
         private System.Windows.Forms.Label PrestamoId;
         private System.Windows.Forms.ComboBox LectorcomboBox;
         private System.Windows.Forms.ComboBox LibrocomboBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.NumericUpDown prestamoidnumericUpDown;
+        private System.Windows.Forms.DataGridView PrestamoDetalleDataGridView;
         private System.Windows.Forms.Button RemoverButton;
         private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.Button EliminarButton;

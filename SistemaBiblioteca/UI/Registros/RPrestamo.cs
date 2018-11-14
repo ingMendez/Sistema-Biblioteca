@@ -18,7 +18,60 @@ namespace SistemaBiblioteca.UI.Registros
         {
             InitializeComponent();
             LlenaCombox();
+            CargarUsuario();
         }
+
+        private void CargarUsuario()
+        {
+            UsuarioTextBox.DataBindings.Clear();
+            var Usuario = UsuarioBLL.GetList(c => true);
+            Binding doBinding = new Binding("Text", Usuario, "Nombres");
+            UsuarioTextBox.DataBindings.Add(doBinding);
+        }
+
+        private void LlenaCampo(Prestamo prestamo)
+        {
+            prestamoidnumericUpDown.Value = prestamo.PrestamoID;
+            LectorcomboBox.SelectedValue = prestamo.LectorID;
+            FechadateTimePicker.Value = prestamo.Fecha;
+
+            PrestamoDetalleDataGridView.DataSource = prestamo.Detalle;
+
+            PrestamoDetalleDataGridView.Columns["Id"].Visible = false;
+            PrestamoDetalleDataGridView.Columns["PrestamoID"].Visible = false;
+        }
+
+        private Prestamo LlenaClase()
+        {
+            Prestamo prestamo = new Prestamo
+            {
+                PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value),
+                LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue),
+                Fecha = FechadateTimePicker.Value
+            };
+
+            foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
+            {
+                prestamo.AgregarDetalle(
+                       ToInt(item.Cells["ID"].Value),
+                    ToInt(item.Cells["PrestamoID"].Value),
+                    ToInt(item.Cells["LectorID"].Value),
+                    ToInt(item.Cells["LibroID"].Value)
+
+                    );
+
+            }
+            return prestamo;
+
+        }
+        private int ToInt(object valor)
+        {
+            int.TryParse(valor.ToString(), out int retorno);
+
+            return retorno;
+        }
+
+
 
         private void LlenaCombox()
         {
@@ -35,5 +88,9 @@ namespace SistemaBiblioteca.UI.Registros
 
         }
 
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
