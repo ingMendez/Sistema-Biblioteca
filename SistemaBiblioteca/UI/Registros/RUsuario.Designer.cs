@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.NoTelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -43,8 +44,10 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // EmailTextBox
@@ -85,13 +88,13 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(249, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 177);
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
             // 
             // ContraseñaTextBox
             // 
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(90, 204);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(90, 203);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(108, 20);
             this.ContraseñaTextBox.TabIndex = 79;
@@ -99,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 211);
+            this.label3.Location = new System.Drawing.Point(23, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 78;
@@ -137,6 +140,7 @@
             this.EliminarButton.TabIndex = 74;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -147,6 +151,7 @@
             this.GuardarButton.TabIndex = 73;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -168,6 +173,7 @@
             this.BuscarButton.TabIndex = 71;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // label1
             // 
@@ -177,6 +183,10 @@
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 70;
             this.label1.Text = "UsuarioId";
+            // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
             // 
             // RUsuario
             // 
@@ -202,6 +212,7 @@
             this.Text = "RUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +235,6 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider SuperErrorProvider;
     }
 }

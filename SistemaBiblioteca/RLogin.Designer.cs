@@ -47,6 +47,7 @@
             this.SalirButton.TabIndex = 13;
             this.SalirButton.Text = "Salir";
             this.SalirButton.UseVisualStyleBackColor = true;
+            this.SalirButton.Click += new System.EventHandler(this.SalirButton_Click);
             // 
             // EntrarButton
             // 
@@ -57,6 +58,7 @@
             this.EntrarButton.TabIndex = 12;
             this.EntrarButton.Text = "Entrar";
             this.EntrarButton.UseVisualStyleBackColor = true;
+            this.EntrarButton.Click += new System.EventHandler(this.EntrarButton_Click);
             // 
             // pictureBox1
             // 
@@ -99,7 +101,7 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Email";
             // 
-            // Login
+            // RLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +113,7 @@
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
+            this.Name = "RLogin";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

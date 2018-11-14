@@ -47,5 +47,26 @@ namespace SistemaBiblioteca
             RUsuario rUsuario = new RUsuario();
             rUsuario.ShowDialog();
         }
+
+       public void activos()
+        {
+            registrarCategoriaToolStripMenuItem.Enabled = true;
+            registrarLectorToolStripMenuItem.Enabled = true;
+            registrarLibroToolStripMenuItem.Enabled = true;
+            registrarUsuarioToolStripMenuItem.Enabled = true;
+
+        }
+        public void loo()
+        {
+            RLogin log = new RLogin();
+            log.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RLogin log = new RLogin();
+            log.ShowDialog();
+        }
     }
 }
