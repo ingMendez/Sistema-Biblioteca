@@ -19,7 +19,7 @@ namespace SistemaBiblioteca
             InitializeComponent();
         }
 
-        private void registrarLectorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegistrarLectorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RLector rlector = new RLector();
             rlector.ShowDialog();
@@ -30,25 +30,25 @@ namespace SistemaBiblioteca
 
         }
 
-        private void registrarLibroToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegistrarLibroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RLibros rlibros = new RLibros();
             rlibros.ShowDialog();
         }
 
-        private void registrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegistrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RCategoria rcategoria = new RCategoria();
             rcategoria.ShowDialog();
         }
 
-        private void registrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegistrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RUsuario rUsuario = new RUsuario();
             rUsuario.ShowDialog();
         }
 
-       public void activos()
+       public void Activos()
         {
             registrarCategoriaToolStripMenuItem.Enabled = true;
             registrarLectorToolStripMenuItem.Enabled = true;
@@ -56,17 +56,23 @@ namespace SistemaBiblioteca
             registrarUsuarioToolStripMenuItem.Enabled = true;
 
         }
-        public void loo()
+        public void Loo()
         {
             RLogin log = new RLogin();
             log.ShowDialog();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             RLogin log = new RLogin();
             log.ShowDialog();
+        }
+
+        private void RegistrarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RPrestamo prestamo = new RPrestamo();
+            prestamo.ShowDialog();
         }
     }
 }

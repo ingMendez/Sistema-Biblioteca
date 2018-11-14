@@ -18,7 +18,7 @@ namespace SistemaBiblioteca.BLL
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Libro.Add(prestamo) != null)
+                if (contexto.Prestamo.Add(prestamo) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -33,14 +33,14 @@ namespace SistemaBiblioteca.BLL
         }
 
 
-        public static bool Modificar(Libros libro)
+        public static bool Modificar(Prestamo _prestamo)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(libro).State = EntityState.Modified;
+                contexto.Entry(_prestamo).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -62,9 +62,9 @@ namespace SistemaBiblioteca.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Libros libro = contexto.Libro.Find(id);
+                Prestamo _prestamo = contexto.Prestamo.Find(id);
 
-                contexto.Libro.Remove(libro);
+                contexto.Prestamo.Remove(_prestamo);
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -80,31 +80,31 @@ namespace SistemaBiblioteca.BLL
         }
 
 
-        public static Libros Buscar(int id)
+        public static Prestamo Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Prestamo prestamo = new Prestamo();
+            Prestamo _prestamo = new Prestamo();
             try
             {
-                libros = contexto.Libro.Find(id);
+                _prestamo = contexto.Prestamo.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            return prestamo;
+            return _prestamo;
         }
 
 
-        public static List<Libros> GetList(Expression<Func<Prestamo, bool>> expression)
+        public static List<Prestamo> GetList(Expression<Func<Prestamo, bool>> expression)
         {
-            List<Libros> libro = new List<Libros>();
+            List<Prestamo> _prestamo = new List<Prestamo>();
             Contexto contexto = new Contexto();
 
             try
             {
-                libro = contexto.Libro.Where(expression).ToList();
+                _prestamo = contexto.Prestamo.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -112,7 +112,7 @@ namespace SistemaBiblioteca.BLL
                 throw;
             }
 
-            return libro;
+            return _prestamo;
         }
 
        /* public static DateTime PorcientoGanancia(DateTime vencimiento)

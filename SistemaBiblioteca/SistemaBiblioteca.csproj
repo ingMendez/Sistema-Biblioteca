@@ -55,6 +55,7 @@
     <Compile Include="Entidades\Lector.cs" />
     <Compile Include="Entidades\Libros.cs" />
     <Compile Include="Entidades\Prestamo.cs" />
+    <Compile Include="Entidades\PrestamoDetalle.cs" />
     <Compile Include="Entidades\TipoEditorial.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Principal.cs">
@@ -169,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RLibros.resx">
       <DependentUpon>RLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RPrestamo.resx">
+      <DependentUpon>RPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RUsuario.resx">
       <DependentUpon>RUsuario.cs</DependentUpon>

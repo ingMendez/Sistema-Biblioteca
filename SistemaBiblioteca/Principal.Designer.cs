@@ -42,6 +42,7 @@
             this.consultarPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.registrarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,8 @@
             this.registrarLibroToolStripMenuItem,
             this.registrarCategoriaToolStripMenuItem,
             this.registrarLectorToolStripMenuItem,
-            this.registrarUsuarioToolStripMenuItem});
+            this.registrarUsuarioToolStripMenuItem,
+            this.registrarPrestamoToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -80,28 +82,28 @@
             this.registrarLibroToolStripMenuItem.Name = "registrarLibroToolStripMenuItem";
             this.registrarLibroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarLibroToolStripMenuItem.Text = "Registrar Libro";
-            this.registrarLibroToolStripMenuItem.Click += new System.EventHandler(this.registrarLibroToolStripMenuItem_Click);
+            this.registrarLibroToolStripMenuItem.Click += new System.EventHandler(this.RegistrarLibroToolStripMenuItem_Click);
             // 
             // registrarCategoriaToolStripMenuItem
             // 
             this.registrarCategoriaToolStripMenuItem.Name = "registrarCategoriaToolStripMenuItem";
             this.registrarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarCategoriaToolStripMenuItem.Text = "Registrar Categoria";
-            this.registrarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.registrarCategoriaToolStripMenuItem_Click);
+            this.registrarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarCategoriaToolStripMenuItem_Click);
             // 
             // registrarLectorToolStripMenuItem
             // 
             this.registrarLectorToolStripMenuItem.Name = "registrarLectorToolStripMenuItem";
             this.registrarLectorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarLectorToolStripMenuItem.Text = "Registrar  Lector";
-            this.registrarLectorToolStripMenuItem.Click += new System.EventHandler(this.registrarLectorToolStripMenuItem_Click);
+            this.registrarLectorToolStripMenuItem.Click += new System.EventHandler(this.RegistrarLectorToolStripMenuItem_Click);
             // 
             // registrarUsuarioToolStripMenuItem
             // 
             this.registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
             this.registrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
-            this.registrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registrarUsuarioToolStripMenuItem_Click);
+            this.registrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.RegistrarUsuarioToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -145,7 +147,14 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // registrarPrestamoToolStripMenuItem
+            // 
+            this.registrarPrestamoToolStripMenuItem.Name = "registrarPrestamoToolStripMenuItem";
+            this.registrarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPrestamoToolStripMenuItem.Text = "Registrar Prestamo";
+            this.registrarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.RegistrarPrestamoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -182,6 +191,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPrestamosToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem registrarPrestamoToolStripMenuItem;
     }
 }
 

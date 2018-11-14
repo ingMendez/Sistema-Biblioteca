@@ -11,11 +11,11 @@ namespace SistemaBiblioteca.DAL
     {
         public DbSet<Lector> Lectores { get; set; }
         public DbSet<Libros> Libro { get; set; }
-      //  public DbSet<Loggin> longin { get; set; }
+        public DbSet<Prestamo> Prestamo { get; set; }
         public DbSet<TipoEditorial> Editorial { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Categoria> categorias { get; set; }
-
+        
 
         public Contexto() : base("ConStr")
         {

@@ -34,7 +34,7 @@ namespace SistemaBiblioteca
                     MessageBox.Show("Correcto");
                     Form1 principal = new Form1();
                     principal.Show();
-                    principal.activos();
+                    principal.Activos();
                     this.Hide();
                 }
             }
