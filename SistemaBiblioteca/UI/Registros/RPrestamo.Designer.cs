@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,13 +39,15 @@
             this.prestamoidnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrestamoDetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.RemoverButton = new System.Windows.Forms.Button();
-            this.AgregarButtton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.AgregarButtton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +71,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 27);
+            this.label3.Location = new System.Drawing.Point(274, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 2;
@@ -102,7 +105,7 @@
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(362, 24);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(364, 53);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.FechadateTimePicker.TabIndex = 6;
@@ -131,16 +134,7 @@
             this.RemoverButton.TabIndex = 87;
             this.RemoverButton.Text = "Remover";
             this.RemoverButton.UseVisualStyleBackColor = true;
-            // 
-            // AgregarButtton
-            // 
-            this.AgregarButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.AgregarButtton.Location = new System.Drawing.Point(362, 130);
-            this.AgregarButtton.Name = "AgregarButtton";
-            this.AgregarButtton.Size = new System.Drawing.Size(85, 29);
-            this.AgregarButtton.TabIndex = 86;
-            this.AgregarButtton.Text = "Agregar";
-            this.AgregarButtton.UseVisualStyleBackColor = true;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // EliminarButton
             // 
@@ -151,6 +145,7 @@
             this.EliminarButton.TabIndex = 90;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -161,6 +156,7 @@
             this.GuardarButton.TabIndex = 89;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -182,6 +178,22 @@
             this.BuscarButton.TabIndex = 91;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
+            // 
+            // AgregarButtton
+            // 
+            this.AgregarButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AgregarButtton.Location = new System.Drawing.Point(343, 122);
+            this.AgregarButtton.Name = "AgregarButtton";
+            this.AgregarButtton.Size = new System.Drawing.Size(85, 29);
+            this.AgregarButtton.TabIndex = 92;
+            this.AgregarButtton.Text = "Agregar";
+            this.AgregarButtton.UseVisualStyleBackColor = true;
+            this.AgregarButtton.Click += new System.EventHandler(this.AgregarButtton_Click_1);
             // 
             // RPrestamo
             // 
@@ -189,12 +201,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(526, 450);
+            this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.RemoverButton);
-            this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.PrestamoDetalleDataGridView);
             this.Controls.Add(this.prestamoidnumericUpDown);
             this.Controls.Add(this.FechadateTimePicker);
@@ -208,6 +220,7 @@
             this.Text = "RPrestamo";
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,10 +238,11 @@
         private System.Windows.Forms.NumericUpDown prestamoidnumericUpDown;
         private System.Windows.Forms.DataGridView PrestamoDetalleDataGridView;
         private System.Windows.Forms.Button RemoverButton;
-        private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.ErrorProvider SuperErrorProvider;
+        private System.Windows.Forms.Button AgregarButtton;
     }
 }

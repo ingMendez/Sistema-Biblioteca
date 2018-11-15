@@ -36,13 +36,13 @@
             this.registrarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarLectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarLibrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.registrarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,13 @@
             this.registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
             this.registrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.RegistrarUsuarioToolStripMenuItem_Click);
             // 
+            // registrarPrestamoToolStripMenuItem
+            // 
+            this.registrarPrestamoToolStripMenuItem.Name = "registrarPrestamoToolStripMenuItem";
+            this.registrarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPrestamoToolStripMenuItem.Text = "Registrar Prestamo";
+            this.registrarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.RegistrarPrestamoToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -149,13 +156,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // registrarPrestamoToolStripMenuItem
-            // 
-            this.registrarPrestamoToolStripMenuItem.Name = "registrarPrestamoToolStripMenuItem";
-            this.registrarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarPrestamoToolStripMenuItem.Text = "Registrar Prestamo";
-            this.registrarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.RegistrarPrestamoToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,9 +165,10 @@
             this.ClientSize = new System.Drawing.Size(639, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

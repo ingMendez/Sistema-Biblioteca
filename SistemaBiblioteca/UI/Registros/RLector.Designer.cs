@@ -54,67 +54,67 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 50);
+            this.label1.Location = new System.Drawing.Point(36, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lector ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 82);
+            this.label2.Location = new System.Drawing.Point(36, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Lector";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 123);
+            this.label3.Location = new System.Drawing.Point(36, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cedula";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 159);
+            this.label4.Location = new System.Drawing.Point(36, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Numero Telefono";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 200);
+            this.label5.Location = new System.Drawing.Point(36, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Direccion";
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(126, 48);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(147, 48);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(84, 20);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(98, 20);
             this.IDnumericUpDown.TabIndex = 5;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(126, 82);
+            this.NombretextBox.Location = new System.Drawing.Point(147, 82);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(100, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(116, 20);
             this.NombretextBox.TabIndex = 6;
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(285, 268);
+            this.Eliminarbutton.Location = new System.Drawing.Point(280, 268);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(80, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(93, 41);
             this.Eliminarbutton.TabIndex = 18;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(152, 268);
+            this.Guardarbutton.Location = new System.Drawing.Point(177, 268);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(97, 41);
             this.Guardarbutton.TabIndex = 17;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -132,9 +132,9 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 268);
+            this.Nuevobutton.Location = new System.Drawing.Point(19, 268);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
+            this.Nuevobutton.Size = new System.Drawing.Size(97, 41);
             this.Nuevobutton.TabIndex = 16;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -143,16 +143,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 268);
+            this.label6.Location = new System.Drawing.Point(19, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 15;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(302, 37);
+            this.Buscarbutton.Location = new System.Drawing.Point(251, 37);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
+            this.Buscarbutton.Size = new System.Drawing.Size(59, 39);
             this.Buscarbutton.TabIndex = 19;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -160,35 +160,35 @@
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(126, 200);
+            this.DirecciontextBox.Location = new System.Drawing.Point(147, 200);
             this.DirecciontextBox.Multiline = true;
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(201, 47);
+            this.DirecciontextBox.Size = new System.Drawing.Size(234, 47);
             this.DirecciontextBox.TabIndex = 20;
             // 
             // NoTelefonoMaskedTextBox
             // 
-            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(126, 159);
+            this.NoTelefonoMaskedTextBox.Location = new System.Drawing.Point(147, 159);
             this.NoTelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
-            this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(116, 20);
             this.NoTelefonoMaskedTextBox.TabIndex = 83;
             this.NoTelefonoMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.NoTelefonoMaskedTextBox_MaskInputRejected);
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(186, 12);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(298, 17);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(104, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.FechadateTimePicker.TabIndex = 84;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(143, 18);
+            this.label7.Location = new System.Drawing.Point(248, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 85;
             this.label7.Text = "Fecha";
             // 
@@ -198,19 +198,19 @@
             // 
             // CedulatextBox
             // 
-            this.CedulatextBox.Location = new System.Drawing.Point(126, 123);
+            this.CedulatextBox.Location = new System.Drawing.Point(147, 123);
             this.CedulatextBox.Mask = "(999) 000-0000";
             this.CedulatextBox.Name = "CedulatextBox";
-            this.CedulatextBox.Size = new System.Drawing.Size(100, 20);
+            this.CedulatextBox.Size = new System.Drawing.Size(116, 20);
             this.CedulatextBox.TabIndex = 86;
             this.CedulatextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.CedulatextBox_MaskInputRejected);
             // 
             // RLector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(390, 345);
+            this.ClientSize = new System.Drawing.Size(439, 322);
             this.Controls.Add(this.CedulatextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.FechadateTimePicker);
@@ -228,8 +228,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "RLector";
-            this.Text = "s";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);

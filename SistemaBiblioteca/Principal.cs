@@ -34,6 +34,7 @@ namespace SistemaBiblioteca
         {
             RLibros rlibros = new RLibros();
             rlibros.ShowDialog();
+            rlibros.MdiParent = this;
         }
 
         private void RegistrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)

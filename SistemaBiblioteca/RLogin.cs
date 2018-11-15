@@ -19,7 +19,7 @@ namespace SistemaBiblioteca
 
         private void EntrarButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-ABF85DA; Initial Catalog = BiBliotecaDB; "
+            SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-ABF85DA\\SQLEXPRESS; Initial Catalog = BiBliotecaDB; "
             + "Integrated Security=true;");
 
             conexion.Open();
