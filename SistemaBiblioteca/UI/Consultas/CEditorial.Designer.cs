@@ -71,7 +71,7 @@
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 35;
             this.label5.Text = "Fecha";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // Hasta_dateTimePicker
             // 
@@ -99,7 +99,7 @@
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 32;
             this.label4.Text = "Hasta";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // label3
             // 
@@ -109,7 +109,7 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Desde";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Criterio_textBox
             // 
@@ -127,7 +127,7 @@
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 29;
             this.label2.Text = "Consulta";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // Filtro_comboBox
             // 
@@ -146,7 +146,7 @@
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 27;
             this.label1.Text = "Consultar Por :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // ConsultadataGridView
             // 

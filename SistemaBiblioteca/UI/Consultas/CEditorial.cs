@@ -63,7 +63,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }
@@ -78,12 +78,12 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void Label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }
@@ -93,7 +93,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -103,7 +103,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }

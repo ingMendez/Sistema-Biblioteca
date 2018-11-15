@@ -132,45 +132,50 @@ namespace SistemaBiblioteca.UI.Registros
 
         private void AgregarButtton_Click_1(object sender, EventArgs e)
         {
-
-
-            // detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
-
-            PrestamoDetalle pr = new PrestamoDetalle();
-
-            pr.ID = 0;
-            pr.PrestamoID = (int)prestamoidnumericUpDown.Value;
-            pr.LectorID = (int)LectorcomboBox.SelectedValue;
-            pr.LibroID = (int)LibrocomboBox.SelectedValue;
-            if (detalle.Count == 0)
+            if (!Validar())
             {
-                detalle.Add(pr);
-             
+                return;
             }
             else
             {
-                if (!pr.Equals(detalle.FindAll(x => x.LibroID == pr.LibroID && x.LectorID == pr.LectorID)))
+
+             //   detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
+
+                PrestamoDetalle pr = new PrestamoDetalle();
+
+                pr.ID = 0;
+                pr.PrestamoID = (int)prestamoidnumericUpDown.Value;
+                pr.LectorID = (int)LectorcomboBox.SelectedValue;
+                pr.LibroID = (int)LibrocomboBox.SelectedValue;
+                if (detalle.Count == 0)
                 {
                     detalle.Add(pr);
+
                 }
-                   
+                else
+                {
+                    if (!pr.Equals(detalle.FindAll(x => x.LibroID == pr.LibroID && x.LectorID == pr.LectorID)))
+                    {
+                        detalle.Add(pr);
+                    }
 
+
+                }
+
+
+                /*detalle.Add(
+                        new PrestamoDetalle(
+                           id: 0,
+                           prestamoid: (int)prestamoidnumericUpDown.Value,
+                           lectorid: (int)LectorcomboBox.SelectedValue,
+                           libroid: (int)LibrocomboBox.SelectedValue
+                           ));*/
+
+
+
+                PrestamoDetalleDataGridView.DataSource = null;
+                PrestamoDetalleDataGridView.DataSource = this.detalle;
             }
-
-
-            /*detalle.Add(
-                    new PrestamoDetalle(
-                       id: 0,
-                       prestamoid: (int)prestamoidnumericUpDown.Value,
-                       lectorid: (int)LectorcomboBox.SelectedValue,
-                       libroid: (int)LibrocomboBox.SelectedValue
-                       ));*/
-
-
-      
-            PrestamoDetalleDataGridView.DataSource = null;
-                PrestamoDetalleDataGridView.DataSource = detalle;
-
             
 
         }
