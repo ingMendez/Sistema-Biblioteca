@@ -25,6 +25,7 @@ namespace SistemaBiblioteca.UI.Registros
             IDEditorialnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
         }
 
         private TipoEditorial LlenaClase()
@@ -33,7 +34,8 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 EditarialID = Convert.ToInt32(IDEditorialnumericUpDown.Value),
                 Nombre = NombretextBox.Text,
-                Dirrecion = DireccionTextBox.Text
+                Dirrecion = DireccionTextBox.Text,
+                Fecha = FechadateTimePicker.Value
             };
             return tipo;
         }
@@ -43,6 +45,7 @@ namespace SistemaBiblioteca.UI.Registros
             IDEditorialnumericUpDown.Value = tipo.EditarialID;
             NombretextBox.Text = tipo.Nombre;
             DireccionTextBox.Text = tipo.Dirrecion;
+            FechadateTimePicker.Value = tipo.Fecha;
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -70,6 +73,11 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 SuperErrorProvider.SetError(DireccionTextBox, "El Campo no debe estar vacio");
                 DireccionTextBox.Focus();
+                paso = false;
+            }
+            if (FechadateTimePicker.Value !=DateTime.Now){
+                SuperErrorProvider.SetError(FechadateTimePicker, "fecha incorreta");
+                FechadateTimePicker.Focus();
                 paso = false;
             }
             return paso;
@@ -181,6 +189,11 @@ namespace SistemaBiblioteca.UI.Registros
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FechadateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
         }

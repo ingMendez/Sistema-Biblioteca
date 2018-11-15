@@ -1,4 +1,5 @@
-﻿using SistemaBiblioteca.UI.Registros;
+﻿using SistemaBiblioteca.UI.Consultas;
+using SistemaBiblioteca.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +75,27 @@ namespace SistemaBiblioteca
         {
             RPrestamo prestamo = new RPrestamo();
             prestamo.ShowDialog();
+        }
+
+        private void ConsultarLibrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLibros Clibros = new CLibros();
+            Clibros.Show();
+            Clibros.MdiParent = this;
+        }
+
+        private void consultarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CUsuario CUsuario = new CUsuario();
+            CUsuario.Show();
+            CUsuario.MdiParent = this;
+        }
+
+        private void ConsultarPrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CPrestamo cPrestamo = new CPrestamo();
+            cPrestamo.Show();
+            cPrestamo.MdiParent = this;
         }
     }
 }

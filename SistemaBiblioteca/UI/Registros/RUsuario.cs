@@ -25,18 +25,19 @@ namespace SistemaBiblioteca.UI.Registros
         //Métodos
         private Usuario LlenaClase()
         {
-            Usuario usuario = new Usuario();
-
-            usuario.UsuarioId = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-            usuario.Nombres = NombresTextBox.Text;
-            usuario.Email = EmailTextBox.Text;
-            usuario.NoTelefono = NoTelefonoMaskedTextBox.Text;
-            usuario.Contraseña = ContraseñaTextBox.Text;
+            Usuario usuario = new Usuario
+            {
+                UsuarioId = Convert.ToInt32(UsuarioIdNumericUpDown.Value),
+                Nombres = NombresTextBox.Text,
+                Email = EmailTextBox.Text,
+                NoTelefono = NoTelefonoMaskedTextBox.Text,
+                Contraseña = ContraseñaTextBox.Text
+            };
 
             return usuario;
         }
 
-        private void LimpiarObjetos()
+        private void Limpiar()
         {
             UsuarioIdNumericUpDown.Value = 0;
             NombresTextBox.Clear();
@@ -44,6 +45,7 @@ namespace SistemaBiblioteca.UI.Registros
             NoTelefonoMaskedTextBox.Clear();
             ContraseñaTextBox.Clear();
             SuperErrorProvider.Clear();
+            FechadateTimePicker.Value = DateTime.Now;
         }
 
         private bool HayErrores()
@@ -74,13 +76,19 @@ namespace SistemaBiblioteca.UI.Registros
                     "Debe ingresar una Contraseña para el Usuario");
                 paso = true;
             }
+            if (FechadateTimePicker.Value!=DateTime.Now)
+            {
+                SuperErrorProvider.SetError(FechadateTimePicker,
+                    "Fecha incorrecta");
+                paso = true;
+            }
 
             return paso;
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-            LimpiarObjetos();
+            Limpiar();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -118,7 +126,7 @@ namespace SistemaBiblioteca.UI.Registros
 
             if (paso)
             {
-                LimpiarObjetos();
+                Limpiar();
             }
             else
                 MessageBox.Show("No se pudo guardar!!", "Falló",
@@ -135,7 +143,7 @@ namespace SistemaBiblioteca.UI.Registros
                 if (UsuarioBLL.Eliminar(id))
                 {
                     MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarObjetos();
+                    Limpiar();
                 }
                 else
                     MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -156,6 +164,7 @@ namespace SistemaBiblioteca.UI.Registros
                 EmailTextBox.Text = usuario.Email;
                 NoTelefonoMaskedTextBox.Text = usuario.NoTelefono;
                 ContraseñaTextBox.Text = usuario.Contraseña;
+                FechadateTimePicker.Value = usuario.FechaCreacion;
             }
         }
     }

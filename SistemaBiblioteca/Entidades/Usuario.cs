@@ -20,13 +20,16 @@ namespace SistemaBiblioteca.Entidades
 
             public string Contraseña { get; set; }
 
-            public Usuario()
+            public DateTime FechaCreacion { get; set; }
+
+        public Usuario()
             {
                 UsuarioId = 0;
                 Nombres = string.Empty;
                 NoTelefono = string.Empty;
                 Email = string.Empty;
                 Contraseña = string.Empty;
+                FechaCreacion = DateTime.Now;
             }
     }
     

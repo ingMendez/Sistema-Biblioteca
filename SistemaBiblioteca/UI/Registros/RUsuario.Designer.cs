@@ -45,6 +45,8 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
@@ -86,7 +88,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(249, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 177);
             this.pictureBox1.TabIndex = 80;
@@ -188,11 +190,30 @@
             // 
             this.SuperErrorProvider.ContainerControl = this;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(262, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Fecha";
+            // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(262, 31);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(101, 20);
+            this.FechadateTimePicker.TabIndex = 85;
+            // 
             // RUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 309);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.NoTelefonoMaskedTextBox);
@@ -236,5 +257,7 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
     }
 }

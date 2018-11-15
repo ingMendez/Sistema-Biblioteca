@@ -159,6 +159,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\CEditorial.resx">
+      <DependentUpon>CEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CLector.resx">
+      <DependentUpon>CLector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CLibros.resx">
+      <DependentUpon>CLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CPrestamo.resx">
+      <DependentUpon>CPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CUsuario.resx">
+      <DependentUpon>CUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RCategoria.resx">
       <DependentUpon>RCategoria.cs</DependentUpon>
     </EmbeddedResource>

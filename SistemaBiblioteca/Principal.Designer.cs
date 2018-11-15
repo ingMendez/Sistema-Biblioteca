@@ -127,18 +127,21 @@
             this.consultarLibrosToolStripMenuItem.Name = "consultarLibrosToolStripMenuItem";
             this.consultarLibrosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.consultarLibrosToolStripMenuItem.Text = "Consultar Libros";
+            this.consultarLibrosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarLibrosToolStripMenuItem_Click);
             // 
             // consultarUsuarioToolStripMenuItem
             // 
             this.consultarUsuarioToolStripMenuItem.Name = "consultarUsuarioToolStripMenuItem";
             this.consultarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
+            this.consultarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.consultarUsuarioToolStripMenuItem_Click);
             // 
             // consultarPrestamosToolStripMenuItem
             // 
             this.consultarPrestamosToolStripMenuItem.Name = "consultarPrestamosToolStripMenuItem";
             this.consultarPrestamosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.consultarPrestamosToolStripMenuItem.Text = "Consultar Prestamos";
+            this.consultarPrestamosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarPrestamosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
