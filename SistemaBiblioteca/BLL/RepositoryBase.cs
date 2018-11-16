@@ -1,4 +1,5 @@
 ﻿using SistemaBiblioteca.DAL;
+using SistemaBiblioteca.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,21 @@ namespace SistemaBiblioteca.BLL
             return Lista;
 
         }
+       /* public List<Libros> Getlibro(Expression<Func<Libros, bool>> expression)
+        {
+            List<Libros> Lista = new List<Libros>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                Lista = contexto.Libro.Where(u=> u.Disponibilidad==false).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Lista;
+
+        }*/
 
         public virtual bool Guardar(T entity)
         {

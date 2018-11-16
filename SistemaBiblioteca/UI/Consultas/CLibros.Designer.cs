@@ -111,6 +111,7 @@
             this.Criterio_textBox.Name = "Criterio_textBox";
             this.Criterio_textBox.Size = new System.Drawing.Size(139, 20);
             this.Criterio_textBox.TabIndex = 42;
+            this.Criterio_textBox.TextChanged += new System.EventHandler(this.Criterio_textBox_TextChanged);
             // 
             // label2
             // 
@@ -124,10 +125,18 @@
             // Filtro_comboBox
             // 
             this.Filtro_comboBox.FormattingEnabled = true;
+            this.Filtro_comboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Nombre",
+            "Fecha",
+            "ISBN",
+            "Categoria"});
             this.Filtro_comboBox.Location = new System.Drawing.Point(86, 30);
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);
             this.Filtro_comboBox.TabIndex = 40;
+            this.Filtro_comboBox.SelectedIndexChanged += new System.EventHandler(this.Filtro_comboBox_SelectedIndexChanged);
             // 
             // label1
             // 

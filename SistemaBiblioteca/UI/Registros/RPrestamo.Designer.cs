@@ -45,6 +45,8 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.AgregarButtton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
@@ -101,6 +103,7 @@
             this.LibrocomboBox.Name = "LibrocomboBox";
             this.LibrocomboBox.Size = new System.Drawing.Size(121, 21);
             this.LibrocomboBox.TabIndex = 5;
+            this.LibrocomboBox.SelectedIndexChanged += new System.EventHandler(this.LibrocomboBox_SelectedIndexChanged);
             // 
             // FechadateTimePicker
             // 
@@ -195,12 +198,30 @@
             this.AgregarButtton.UseVisualStyleBackColor = true;
             this.AgregarButtton.Click += new System.EventHandler(this.AgregarButtton_Click_1);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "label4";
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.Location = new System.Drawing.Point(358, 16);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(156, 20);
+            this.UsuarioTextBox.TabIndex = 94;
+            // 
             // RPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(526, 450);
+            this.Controls.Add(this.UsuarioTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
@@ -244,5 +265,7 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
         private System.Windows.Forms.Button AgregarButtton;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

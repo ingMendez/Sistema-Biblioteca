@@ -15,7 +15,14 @@ namespace SistemaBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            RLogin rg = new RLogin();
+
+            Application.Run(rg);
+            if(rg.DialogResult == DialogResult.OK)
+            {
+                rg.Dispose();
+                Application.Run(new Form1());
+            }
         }
     }
 }

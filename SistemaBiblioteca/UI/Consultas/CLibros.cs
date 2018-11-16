@@ -22,6 +22,17 @@ namespace SistemaBiblioteca.UI.Consultas
 
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
+         
+      
+
+        private void Consultarbutton_Click(object sender, EventArgs e)
+        {
             Expression<Func<Libros, bool>> filtro = a => true;
             int id;
             switch (Filtro_comboBox.SelectedIndex)
@@ -30,7 +41,9 @@ namespace SistemaBiblioteca.UI.Consultas
                     break;
                 case 1:
 
+                   
                     id = Convert.ToInt32(Criterio_textBox.Text);
+                    
                     filtro = a => a.LibroID == id;
                     break;
                 case 2:// por nombre
@@ -43,12 +56,12 @@ namespace SistemaBiblioteca.UI.Consultas
                     filtro = a => a.FechaImpresion >= Desde_dateTimePicker.Value.Date && a.FechaImpresion <= Hasta_dateTimePicker.Value.Date;
 
                     break;
-                case 4:// por nombre
+                case 4:// por ISBN
 
                     filtro = a => a.ISBN.Contains(Criterio_textBox.Text);
                     break;
-                case 5:// por nombre
-                        id = Convert.ToInt32(Criterio_textBox.Text);
+                case 5:// por CATEGORIA
+                    id = Convert.ToInt32(Criterio_textBox.Text);
                     filtro = a => a.CategoriaID == id;
                     break;
 
@@ -57,16 +70,60 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Criterio_textBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-      
-
-        private void Consultarbutton_Click(object sender, EventArgs e)
+        private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (Filtro_comboBox.SelectedIndex == 0)
+            {
+                Criterio_textBox.Visible = false;
+                label2.Visible = false;
+            }
+           if(Filtro_comboBox.SelectedIndex == 1)
+            {
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+                Hasta_dateTimePicker.Visible = false;
+                Desde_dateTimePicker.Visible = false;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+               // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+                
+            }
+            
+
+
 
         }
+       /* private void Criterio()
+        {
+           // object sender;
+            KeyPressEventArgs e;
+
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se puede digitar Números", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }*/
     }
 }

@@ -20,6 +20,10 @@ namespace SistemaBiblioteca.BLL
             {
                 if (contexto.Prestamo.Add(prestamo) != null)
                 {
+                        foreach (var item in prestamo.Detalle)
+                        {
+                            contexto.Libro.Find(item.LibroID).Disponibilidad =false;
+                        }
                     contexto.SaveChanges();
                     paso = true;
                 }
@@ -106,6 +110,7 @@ namespace SistemaBiblioteca.BLL
             {
                 _prestamo = contexto.Prestamo.Where(expression).ToList();
                 contexto.Dispose();
+
             }
             catch (Exception)
             {

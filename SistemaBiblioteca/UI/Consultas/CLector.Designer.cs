@@ -132,6 +132,11 @@
             // Filtro_comboBox
             // 
             this.Filtro_comboBox.FormattingEnabled = true;
+            this.Filtro_comboBox.Items.AddRange(new object[] {
+            "Todo",
+            "ID",
+            "Nombre",
+            "Fecha"});
             this.Filtro_comboBox.Location = new System.Drawing.Point(94, 16);
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);

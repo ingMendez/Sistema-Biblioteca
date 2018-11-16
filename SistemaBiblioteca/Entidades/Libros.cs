@@ -16,12 +16,13 @@ namespace SistemaBiblioteca.Entidades
         public string Descripcion { get; set; }
         public int EditarialID { get; set; }
         public DateTime FechaImpresion { get; set; }
-
+        public bool Disponibilidad { get; set; }
         public Libros()
         {
             LibroID = 0;
             NombreLibro = "";
             ISBN = "";
+            Disponibilidad = true;
             CategoriaID =0;
             Descripcion = " ";
             EditarialID = 0;
