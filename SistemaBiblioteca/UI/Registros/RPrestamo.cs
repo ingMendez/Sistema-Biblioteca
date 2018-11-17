@@ -23,6 +23,7 @@ namespace SistemaBiblioteca.UI.Registros
             detalle = new List<PrestamoDetalle>();
             LibrocomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LectorcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+           // visibilidad()
         }
 
        private void CargarUsuario()
@@ -55,6 +56,11 @@ namespace SistemaBiblioteca.UI.Registros
             return prestamo;
         }
 
+        private void visibilidad()
+        {
+            PrestamoDetalleDataGridView.Columns["id"].Visible = false;
+            PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
+        }
         private Prestamo LlenaClase()
         {
             Prestamo prestamo = new Prestamo();
@@ -180,8 +186,10 @@ namespace SistemaBiblioteca.UI.Registros
 
                 PrestamoDetalleDataGridView.DataSource = null;
                 PrestamoDetalleDataGridView.DataSource = detalle;
-           
-            
+            PrestamoDetalleDataGridView.Columns[0].Visible = false;
+            PrestamoDetalleDataGridView.Columns[2].Visible = false;
+
+
 
         }
 

@@ -42,7 +42,7 @@ namespace SistemaBiblioteca.UI.Consultas
                 case 1:
 
                    
-                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    id = Convert.ToInt32(ConsultanumericUpDown.Value);
                     
                     filtro = a => a.LibroID == id;
                     break;
@@ -67,7 +67,13 @@ namespace SistemaBiblioteca.UI.Consultas
 
             }
             Consulta_dataGridView.DataSource = BLL.LibroBLL.GetList(filtro);
+        
+            Consulta_dataGridView.Columns[0].Visible= false;
+            Consulta_dataGridView.Columns[7].Visible = false;
 
+
+            //  Consulta_dataGridView.DataSource;
+            // Consulta_dataGridView.Rows.Add(ID, textBoxNombre.Text, textBoxCantidad.Text, textBoxStock.Text, textBoxPrecio.Text, subTotal);
         }
 
         private void Criterio_textBox_TextChanged(object sender, EventArgs e)
@@ -84,9 +90,12 @@ namespace SistemaBiblioteca.UI.Consultas
             }
            if(Filtro_comboBox.SelectedIndex == 1)
             {
+                Criterio_textBox.Visible = false;
+                ConsultanumericUpDown.Visible = true;
                 label3.Visible = false;
                 label4.Visible = false;
                 label5.Visible = false;
+
                 Hasta_dateTimePicker.Visible = false;
                 Desde_dateTimePicker.Visible = false;
 
@@ -96,6 +105,7 @@ namespace SistemaBiblioteca.UI.Consultas
                 //Criterio_textBox = .Criterio_textBox();
                 
             }
+      
             
 
 

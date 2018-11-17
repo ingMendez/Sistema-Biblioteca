@@ -40,7 +40,9 @@
             this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
+            this.ConsultanumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Imprimirbutton
@@ -107,7 +109,7 @@
             // 
             // Criterio_textBox
             // 
-            this.Criterio_textBox.Location = new System.Drawing.Point(287, 30);
+            this.Criterio_textBox.Location = new System.Drawing.Point(287, 31);
             this.Criterio_textBox.Name = "Criterio_textBox";
             this.Criterio_textBox.Size = new System.Drawing.Size(139, 20);
             this.Criterio_textBox.TabIndex = 42;
@@ -116,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 33);
+            this.label2.Location = new System.Drawing.Point(233, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 41;
@@ -155,11 +157,20 @@
             this.Consulta_dataGridView.Size = new System.Drawing.Size(528, 178);
             this.Consulta_dataGridView.TabIndex = 38;
             // 
+            // ConsultanumericUpDown
+            // 
+            this.ConsultanumericUpDown.Location = new System.Drawing.Point(287, 31);
+            this.ConsultanumericUpDown.Name = "ConsultanumericUpDown";
+            this.ConsultanumericUpDown.Size = new System.Drawing.Size(139, 20);
+            this.ConsultanumericUpDown.TabIndex = 50;
+            this.ConsultanumericUpDown.Visible = false;
+            // 
             // CLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 352);
+            this.Controls.Add(this.ConsultanumericUpDown);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);
@@ -175,6 +186,7 @@
             this.Name = "CLibros";
             this.Text = "CLibros";
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +206,6 @@
         private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Consulta_dataGridView;
+        private System.Windows.Forms.NumericUpDown ConsultanumericUpDown;
     }
 }
