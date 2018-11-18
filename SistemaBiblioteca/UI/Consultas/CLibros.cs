@@ -83,7 +83,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Filtro_comboBox.SelectedIndex == 0)
+            if (Filtro_comboBox.SelectedIndex == 0)/// en caso de imprimir por todo 
             {
                 Criterio_textBox.Visible = false;
                 label2.Visible = false;
