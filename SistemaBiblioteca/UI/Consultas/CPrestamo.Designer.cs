@@ -30,13 +30,13 @@
         {
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.ConsultacomboBox = new System.Windows.Forms.ComboBox();
+            this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ConsultatextBox = new System.Windows.Forms.TextBox();
+            this.Criterio_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Desde_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Imprimirbutton = new System.Windows.Forms.Button();
@@ -60,13 +60,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Consultar Por :";
             // 
-            // ConsultacomboBox
+            // Filtro_comboBox
             // 
-            this.ConsultacomboBox.FormattingEnabled = true;
-            this.ConsultacomboBox.Location = new System.Drawing.Point(98, 54);
-            this.ConsultacomboBox.Name = "ConsultacomboBox";
-            this.ConsultacomboBox.Size = new System.Drawing.Size(121, 21);
-            this.ConsultacomboBox.TabIndex = 2;
+            this.Filtro_comboBox.FormattingEnabled = true;
+            this.Filtro_comboBox.Items.AddRange(new object[] {
+            "todo",
+            "ID",
+            "Nombre",
+            "Lector"});
+            this.Filtro_comboBox.Location = new System.Drawing.Point(98, 54);
+            this.Filtro_comboBox.Name = "Filtro_comboBox";
+            this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);
+            this.Filtro_comboBox.TabIndex = 2;
+            this.Filtro_comboBox.SelectedIndexChanged += new System.EventHandler(this.ConsultacomboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -77,12 +83,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Consulta";
             // 
-            // ConsultatextBox
+            // Criterio_textBox
             // 
-            this.ConsultatextBox.Location = new System.Drawing.Point(299, 54);
-            this.ConsultatextBox.Name = "ConsultatextBox";
-            this.ConsultatextBox.Size = new System.Drawing.Size(139, 20);
-            this.ConsultatextBox.TabIndex = 4;
+            this.Criterio_textBox.Location = new System.Drawing.Point(299, 54);
+            this.Criterio_textBox.Name = "Criterio_textBox";
+            this.Criterio_textBox.Size = new System.Drawing.Size(139, 20);
+            this.Criterio_textBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -102,21 +108,22 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Hasta";
             // 
-            // DesdedateTimePicker
+            // Desde_dateTimePicker
             // 
-            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(98, 132);
-            this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(117, 20);
-            this.DesdedateTimePicker.TabIndex = 9;
+            this.Desde_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Desde_dateTimePicker.Location = new System.Drawing.Point(98, 132);
+            this.Desde_dateTimePicker.Name = "Desde_dateTimePicker";
+            this.Desde_dateTimePicker.Size = new System.Drawing.Size(117, 20);
+            this.Desde_dateTimePicker.TabIndex = 9;
             // 
-            // HastadateTimePicker
+            // Hasta_dateTimePicker
             // 
-            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(282, 132);
-            this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(122, 20);
-            this.HastadateTimePicker.TabIndex = 10;
+            this.Hasta_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Hasta_dateTimePicker.Location = new System.Drawing.Point(282, 132);
+            this.Hasta_dateTimePicker.Name = "Hasta_dateTimePicker";
+            this.Hasta_dateTimePicker.Size = new System.Drawing.Size(122, 20);
+            this.Hasta_dateTimePicker.TabIndex = 10;
+            this.Hasta_dateTimePicker.ValueChanged += new System.EventHandler(this.HastadateTimePicker_ValueChanged);
             // 
             // label5
             // 
@@ -154,13 +161,13 @@
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.HastadateTimePicker);
-            this.Controls.Add(this.DesdedateTimePicker);
+            this.Controls.Add(this.Hasta_dateTimePicker);
+            this.Controls.Add(this.Desde_dateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ConsultatextBox);
+            this.Controls.Add(this.Criterio_textBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ConsultacomboBox);
+            this.Controls.Add(this.Filtro_comboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultadataGridView);
             this.Name = "CPrestamo";
@@ -175,13 +182,13 @@
 
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ConsultacomboBox;
+        private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox ConsultatextBox;
+        private System.Windows.Forms.TextBox Criterio_textBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
-        private System.Windows.Forms.DateTimePicker HastadateTimePicker;
+        private System.Windows.Forms.DateTimePicker Desde_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Imprimirbutton;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RCategoria));
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -46,56 +47,71 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(243, 5);
+            this.Buscarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Buscarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.BackgroundImage")));
+            this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Buscarbutton.Location = new System.Drawing.Point(202, 12);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
+            this.Buscarbutton.Size = new System.Drawing.Size(51, 49);
             this.Buscarbutton.TabIndex = 28;
             this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(225, 175);
+            this.Eliminarbutton.BackColor = System.Drawing.Color.White;
+            this.Eliminarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.BackgroundImage")));
+            this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Eliminarbutton.Location = new System.Drawing.Point(225, 167);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(80, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(80, 49);
             this.Eliminarbutton.TabIndex = 27;
             this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.UseVisualStyleBackColor = false;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(128, 175);
+            this.Guardarbutton.BackColor = System.Drawing.Color.White;
+            this.Guardarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.BackgroundImage")));
+            this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Guardarbutton.Location = new System.Drawing.Point(123, 167);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(82, 49);
             this.Guardarbutton.TabIndex = 26;
             this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.UseVisualStyleBackColor = false;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 175);
+            this.Nuevobutton.BackColor = System.Drawing.Color.White;
+            this.Nuevobutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.BackgroundImage")));
+            this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 167);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
+            this.Nuevobutton.Size = new System.Drawing.Size(83, 49);
             this.Nuevobutton.TabIndex = 25;
             this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Direccicon
             // 
             this.Direccicon.AutoSize = true;
-            this.Direccicon.Location = new System.Drawing.Point(16, 108);
+            this.Direccicon.BackColor = System.Drawing.Color.White;
+            this.Direccicon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Direccicon.Location = new System.Drawing.Point(12, 98);
             this.Direccicon.Name = "Direccicon";
-            this.Direccicon.Size = new System.Drawing.Size(52, 13);
+            this.Direccicon.Size = new System.Drawing.Size(71, 17);
             this.Direccicon.TabIndex = 24;
             this.Direccicon.Text = "Direccion";
             // 
             // DescipcionTextBox
             // 
-            this.DescipcionTextBox.Location = new System.Drawing.Point(74, 105);
+            this.DescipcionTextBox.BackColor = System.Drawing.Color.White;
+            this.DescipcionTextBox.Location = new System.Drawing.Point(95, 98);
             this.DescipcionTextBox.Multiline = true;
             this.DescipcionTextBox.Name = "DescipcionTextBox";
             this.DescipcionTextBox.Size = new System.Drawing.Size(208, 23);
@@ -104,22 +120,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 66);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 22;
             this.label2.Text = "Nombre";
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(61, 66);
+            this.NombretextBox.BackColor = System.Drawing.Color.White;
+            this.NombretextBox.Location = new System.Drawing.Point(95, 66);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(120, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(208, 20);
             this.NombretextBox.TabIndex = 21;
             // 
             // IDCategorianumericUpDown
             // 
-            this.IDCategorianumericUpDown.Location = new System.Drawing.Point(61, 16);
+            this.IDCategorianumericUpDown.BackColor = System.Drawing.Color.White;
+            this.IDCategorianumericUpDown.Location = new System.Drawing.Point(95, 37);
             this.IDCategorianumericUpDown.Name = "IDCategorianumericUpDown";
             this.IDCategorianumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.IDCategorianumericUpDown.TabIndex = 20;
@@ -127,9 +147,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(25, 17);
             this.label1.TabIndex = 19;
             this.label1.Text = "ID";
             // 
@@ -142,6 +164,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(327, 251);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);

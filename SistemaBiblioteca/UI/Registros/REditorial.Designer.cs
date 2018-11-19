@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(REditorial));
             this.label1 = new System.Windows.Forms.Label();
             this.IDEditorialnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombretextBox = new System.Windows.Forms.TextBox();
@@ -58,7 +59,7 @@
             // 
             // IDEditorialnumericUpDown
             // 
-            this.IDEditorialnumericUpDown.Location = new System.Drawing.Point(58, 38);
+            this.IDEditorialnumericUpDown.Location = new System.Drawing.Point(71, 40);
             this.IDEditorialnumericUpDown.Name = "IDEditorialnumericUpDown";
             this.IDEditorialnumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.IDEditorialnumericUpDown.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(58, 88);
+            this.NombretextBox.Location = new System.Drawing.Point(71, 95);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(120, 20);
             this.NombretextBox.TabIndex = 2;
@@ -75,9 +76,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 88);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -103,12 +106,13 @@
             // 
             // Eliminarbutton
             // 
+            this.Eliminarbutton.BackColor = System.Drawing.Color.Transparent;
             this.Eliminarbutton.Location = new System.Drawing.Point(222, 197);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 41);
             this.Eliminarbutton.TabIndex = 17;
             this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.UseVisualStyleBackColor = false;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
@@ -168,8 +172,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(303, 256);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(323, 268);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.Buscarbutton);

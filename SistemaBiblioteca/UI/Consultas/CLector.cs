@@ -1,4 +1,5 @@
 ﻿using SistemaBiblioteca.Entidades;
+using SistemaBiblioteca.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaBiblioteca.UI.Consultas
 {
     public partial class CLector : Form
     {
+        private List<Lector> lectores = new List<Lector>();
         public CLector()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace SistemaBiblioteca.UI.Consultas
             switch (Filtro_comboBox.SelectedIndex)
             {
                 case 0: /// todos
+
                     break;
                 case 1:
 
@@ -43,13 +46,20 @@ namespace SistemaBiblioteca.UI.Consultas
                     break;
 
             }
-            Consulta_dataGridView.DataSource = BLL.LectorBLL.GetList(filtro);
+            Consulta_dataGridView.DataSource = lectores; 
+               lectores =  BLL.LectorBLL.GetList(filtro);
 
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-
+            if (lectores.Count == 0)
+            {
+                MessageBox.Show("No hay datos pra mostrar en el Reporte");
+                return;
+            }
+            LectorReview lectorReview= new LectorReview(lectores);
+            lectorReview.ShowDialog();
         }
 
         private void label5_Click(object sender, EventArgs e)

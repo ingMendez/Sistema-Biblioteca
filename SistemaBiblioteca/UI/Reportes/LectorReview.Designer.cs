@@ -1,6 +1,6 @@
 ﻿namespace SistemaBiblioteca.UI.Reportes
 {
-    partial class LibroReview
+    partial class LectorReview
     {
         /// <summary>
         /// Required designer variable.
@@ -39,17 +39,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 448);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // LibroReview
+            // LectorReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 448);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "LibroReview";
-            this.Text = "LibroReview";
+            this.Name = "LectorReview";
+            this.Text = "LectorReview";
             this.ResumeLayout(false);
 
         }

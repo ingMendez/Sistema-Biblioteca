@@ -16,7 +16,7 @@ namespace SistemaBiblioteca.UI.Consultas
 {
     public partial class CEditorial : Form
     {
-        private RepositorioBase<TipoEditorial> repos;
+        private RepositorioBase<TipoEditorial> repositorio;
         public CEditorial()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            repos = new RepositorioBase<TipoEditorial>(new Contexto());
+            repositorio = new RepositorioBase<TipoEditorial>(new Contexto());
             Expression<Func<TipoEditorial, bool>> filtro = a => true;
             int id;
             switch (Filtro_comboBox.SelectedIndex)
@@ -49,7 +49,7 @@ namespace SistemaBiblioteca.UI.Consultas
              
 
             }
-            ConsultadataGridView.DataSource = repos.GetList(filtro);
+            ConsultadataGridView.DataSource = repositorio.GetList(filtro);
 
         }
 

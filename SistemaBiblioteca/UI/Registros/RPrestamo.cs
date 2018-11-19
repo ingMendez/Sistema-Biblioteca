@@ -14,13 +14,13 @@ namespace SistemaBiblioteca.UI.Registros
 {
     public partial class RPrestamo : Form
     {
-       //  List<PrestamoDetalle> detalle;
+      public List<PrestamoDetalle> Detalle { get; set; }
         public RPrestamo()
         {
             InitializeComponent();
             LlenaCombox();
             CargarUsuario();
-         //   detalle = new List<PrestamoDetalle>();
+            this.Detalle = new List<PrestamoDetalle>();
             LibrocomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LectorcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
            // visibilidad()
@@ -41,7 +41,9 @@ namespace SistemaBiblioteca.UI.Registros
             LibrocomboBox.SelectedIndex = -1;
             FechadateTimePicker.Value = DateTime.Now;
             PrestamoDetalleDataGridView.DataSource = null;
-       }
+            this.Detalle = new List<PrestamoDetalle>();
+            CargarGrid();
+        }
 
         private void LlenaCampo(Prestamo prestamo)
         {
@@ -49,19 +51,21 @@ namespace SistemaBiblioteca.UI.Registros
             prestamoidnumericUpDown.Value = prestamo.PrestamoID;
             LectorcomboBox.SelectedValue = prestamo.LectorID;
             FechadateTimePicker.Value = prestamo.Fecha;
+            this.Detalle = prestamo.Detalle;
+            CargarGrid();
            // PrestamoDetalleDataGridView.DataSource = null;
-            PrestamoDetalleDataGridView.DataSource = prestamo.Detalle;
+           // PrestamoDetalleDataGridView.DataSource = prestamo.Detalle;
             
-            PrestamoDetalleDataGridView.Columns["id"].Visible = false;
-             PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
+          //  PrestamoDetalleDataGridView.Columns["id"].Visible = false;
+          //   PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
             
         }
 
-        private void visibilidad()
+       /* private void visibilidad()
         {
             PrestamoDetalleDataGridView.Columns["id"].Visible = false;
             PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
-        }
+        }*/
         private Prestamo LlenaClase()
         {
             Prestamo prestamo = new Prestamo();
@@ -69,19 +73,20 @@ namespace SistemaBiblioteca.UI.Registros
                 prestamo.PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value);
                 prestamo.LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue);
                 prestamo.Fecha = FechadateTimePicker.Value;
-            
-            
-            foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
-            {
-                prestamo.AgregarDetalle(
-                       ToInt(item.Cells["id"].Value),
-                    ToInt(item.Cells["prestamoid"].Value),
-                    ToInt(item.Cells["lectorid"].Value),
-                    ToInt(item.Cells["libroId"].Value)
-                  //  id, prestamoid, lectorid, libroId
-                    );
 
-            }
+
+            /* foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
+              {
+                  prestamo.AgregarDetalle(
+                         ToInt(item.Cells["id"].Value),
+                      ToInt(item.Cells["prestamoid"].Value),
+                      ToInt(item.Cells["lectorid"].Value),
+                      ToInt(item.Cells["libroId"].Value)
+                    //  id, prestamoid, lectorid, libroId
+                      );
+
+              }*/
+            prestamo.Detalle = this.Detalle;
 
             return prestamo;
 
@@ -113,10 +118,17 @@ namespace SistemaBiblioteca.UI.Registros
         {
             bool Validar = false;
 
-            if (PrestamoDetalleDataGridView.RowCount == 0)
+           /* if (PrestamoDetalleDataGridView.RowCount == 0)
             {
                 SuperErrorProvider.SetError(PrestamoDetalleDataGridView,
-                    "Debe Agregar los Productos ");
+                    "Debe Agregar los libros ");
+                Validar = true;
+            }*/
+            if(this.Detalle.Count == 0)
+            {
+                SuperErrorProvider.SetError(PrestamoDetalleDataGridView,
+                    "Debe Agregar los libros ");
+                LibrocomboBox.Focus();
                 Validar = true;
             }
 
@@ -144,56 +156,79 @@ namespace SistemaBiblioteca.UI.Registros
 
         private void AgregarButtton_Click_1(object sender, EventArgs e)
         {
-            List<PrestamoDetalle> detalle = new List<PrestamoDetalle>();
-            if (!Validar())
-            {
 
-            }
-                         
             if (PrestamoDetalleDataGridView.DataSource != null)
-                {
-                    detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
-                }
+            {
+                Detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
+            }
 
-                PrestamoDetalle pr = new PrestamoDetalle();
+            this.Detalle.Add(
+                new PrestamoDetalle(
+                   id: 0,
+                    prestamoid : (int)prestamoidnumericUpDown.Value,
+                    // PrestamoDetalleDataGridView.ro
+                    lectorid: (int)LectorcomboBox.SelectedValue,
+                    libroid: (int)LibrocomboBox.SelectedValue
+                      )
+                  );
+            CargarGrid();
+            LibrocomboBox.SelectAll();
 
-                pr.ID = 0;
-                pr.PrestamoID = (int)prestamoidnumericUpDown.Value;
-                pr.LectorID = (int)LectorcomboBox.SelectedValue;
-                pr.LibroID = (int)LibrocomboBox.SelectedValue;
-                if (detalle.Count == 0)
-                {
-                LlenaCombox();
-                detalle.Add(pr);
+            /* //  int countData = PrestamoDetalleDataGridView.RowCount - 1;
+               List<PrestamoDetalle> detalle = new List<PrestamoDetalle>();
+               if (Validar())
+               {
 
-                }
-                else
-                {
-                    if (!pr.Equals(detalle.FindAll(x => x.LibroID == pr.LibroID && x.LectorID == pr.LectorID)))
-                    {
-                        detalle.Add(pr);
-                    }
+               }
 
-
-                }
-
-
-            /*detalle.Add(
-                    new PrestamoDetalle(
-                       id: 0,
-                       prestamoid: (int)prestamoidnumericUpDown.Value,
-                       lectorid: (int)LectorcomboBox.SelectedValue,
-                       libroid: (int)LibrocomboBox.SelectedValue
-                       ));*/
+               if (PrestamoDetalleDataGridView.DataSource != null)
+                   {
+                       detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
+                   }
+              // int row = 0;
+                   PrestamoDetalle pr = new PrestamoDetalle();
+             //  while(row < countData)
+             //  {
 
 
+                   pr.ID = 0;
+                   pr.PrestamoID =// PrestamoDetalleDataGridView.ro
+                   (int)prestamoidnumericUpDown.Value;
+                   pr.LectorID = (int)LectorcomboBox.SelectedValue;
+                   pr.LibroID = (int)LibrocomboBox.SelectedValue;
+                   if (detalle.Count == 0)
+                   {
+                   LlenaCombox();
+                   detalle.Add(pr);
 
-            PrestamoDetalleDataGridView.DataSource = null;
-            PrestamoDetalleDataGridView.DataSource = detalle;
-            // PrestamoDetalleDataGridView.Columns[0].Visible = false;
-            // PrestamoDetalleDataGridView.Columns[2].Visible = false;
-            Llenarvalores();
+                   }
+                   else
+                   {
+                       if (!pr.Equals(detalle.FindAll(x => x.LibroID == pr.LibroID && x.LectorID == pr.LectorID)))
+                       {
+                           detalle.Add(pr);
+                       }
 
+
+                   }
+
+
+               /*detalle.Add(
+                       new PrestamoDetalle(
+                          id: 0,
+                          prestamoid: (int)prestamoidnumericUpDown.Value,
+                          lectorid: (int)LectorcomboBox.SelectedValue,
+                          libroid: (int)LibrocomboBox.SelectedValue
+                          ));/
+
+
+              // (dataGridViewVentas.Rows[row].Cells[2].Value.ToString());
+               PrestamoDetalleDataGridView.DataSource = null;
+               PrestamoDetalleDataGridView.DataSource = detalle;//.ToString().Trim();
+               // PrestamoDetalleDataGridView.Columns[0].Visible = false;
+               // PrestamoDetalleDataGridView.Columns[2].Visible = false;
+              // Llenarvalores();
+              */
 
         }
 
@@ -205,13 +240,15 @@ namespace SistemaBiblioteca.UI.Registros
 
                 detalle.RemoveAt(PrestamoDetalleDataGridView.CurrentRow.Index);
 
-                PrestamoDetalleDataGridView.DataSource = null;
-                PrestamoDetalleDataGridView.DataSource = detalle;
-
+                CargarGrid();
               
             }
         }
-
+        private void CargarGrid()
+        {
+            PrestamoDetalleDataGridView.DataSource = null;
+            PrestamoDetalleDataGridView.DataSource=this.Detalle;
+        }
         private void GuardarButton_Click(object sender, EventArgs e)
         {
 
@@ -305,7 +342,11 @@ namespace SistemaBiblioteca.UI.Registros
         {
 
         }
-      
+
+        private void PrestamoDetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 
 }

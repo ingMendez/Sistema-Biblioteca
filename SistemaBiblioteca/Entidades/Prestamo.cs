@@ -20,10 +20,10 @@ namespace SistemaBiblioteca.Entidades
 
             this.Detalle = new List<PrestamoDetalle>();
 
-           /* PrestamoID = 0;
+            PrestamoID = 0;
             LectorID = 0;
             LibroID = 0;
-            Fecha = DateTime.Now;*/
+            Fecha = DateTime.Now;
         }
         public void AgregarDetalle(int id,int prestamoid,int lectorid,int libroId)
         {

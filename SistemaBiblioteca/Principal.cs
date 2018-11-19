@@ -97,5 +97,11 @@ namespace SistemaBiblioteca
             cPrestamo.Show();
             cPrestamo.MdiParent = this;
         }
+
+        private void consultarLectorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLector lector = new CLector();
+            lector.ShowDialog();
+        }
     }
 }

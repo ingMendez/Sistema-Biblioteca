@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RUsuario));
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.NoTelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -57,11 +58,12 @@
             this.EmailTextBox.Location = new System.Drawing.Point(81, 116);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(162, 20);
-            this.EmailTextBox.TabIndex = 84;
+            this.EmailTextBox.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(23, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
@@ -74,11 +76,12 @@
             this.NoTelefonoMaskedTextBox.Mask = "(999) 000-0000";
             this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
             this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.NoTelefonoMaskedTextBox.TabIndex = 82;
+            this.NoTelefonoMaskedTextBox.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(23, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
@@ -87,10 +90,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 65);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(248, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(131, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
             // 
@@ -99,11 +105,12 @@
             this.ContraseñaTextBox.Location = new System.Drawing.Point(90, 203);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(108, 20);
-            this.ContraseñaTextBox.TabIndex = 79;
+            this.ContraseñaTextBox.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(23, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
@@ -115,11 +122,12 @@
             this.NombresTextBox.Location = new System.Drawing.Point(81, 74);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(162, 20);
-            this.NombresTextBox.TabIndex = 77;
+            this.NombresTextBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(23, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
@@ -131,39 +139,42 @@
             this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(81, 33);
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(54, 20);
-            this.UsuarioIdNumericUpDown.TabIndex = 75;
+            this.UsuarioIdNumericUpDown.TabIndex = 0;
             // 
             // EliminarButton
             // 
+            this.EliminarButton.BackColor = System.Drawing.Color.White;
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EliminarButton.Location = new System.Drawing.Point(272, 265);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(107, 23);
-            this.EliminarButton.TabIndex = 74;
+            this.EliminarButton.TabIndex = 7;
             this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.UseVisualStyleBackColor = false;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
+            this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GuardarButton.Location = new System.Drawing.Point(139, 265);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(104, 23);
-            this.GuardarButton.TabIndex = 73;
+            this.GuardarButton.TabIndex = 6;
             this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.UseVisualStyleBackColor = false;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
+            this.NuevoButton.BackColor = System.Drawing.Color.White;
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NuevoButton.Location = new System.Drawing.Point(5, 265);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(99, 23);
-            this.NuevoButton.TabIndex = 72;
+            this.NuevoButton.TabIndex = 5;
             this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.UseVisualStyleBackColor = false;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
@@ -172,7 +183,7 @@
             this.BuscarButton.Location = new System.Drawing.Point(140, 30);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(103, 23);
-            this.BuscarButton.TabIndex = 71;
+            this.BuscarButton.TabIndex = 8;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
@@ -180,6 +191,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(23, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
@@ -211,6 +223,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(400, 309);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.FechadateTimePicker);

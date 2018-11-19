@@ -71,8 +71,8 @@ namespace SistemaBiblioteca.UI.Registros
             NobretextBox.Text = tipo.NombreLibro;
             DescripciontextBox.Text = tipo.Descripcion;
             ISBNtextBox.Text = tipo.ISBN;
-            CategoriacomboBox.SelectedValue = Convert.ToInt32(tipo.CategoriaID);
-            EditoracomboBox.SelectedValue = Convert.ToInt32(tipo.EditarialID);
+            CategoriacomboBox.SelectedItem =tipo.CategoriaID;
+            EditoracomboBox.SelectedItem = tipo.EditarialID;
             FechadateTimePicker.Value = tipo.FechaImpresion;
 
 

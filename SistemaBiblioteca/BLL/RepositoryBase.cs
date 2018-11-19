@@ -67,7 +67,7 @@ namespace SistemaBiblioteca.BLL
             return Lista;
 
         }
-       /* public List<Libros> Getlibro(Expression<Func<Libros, bool>> expression)
+      /*  public List<Libros> Getlibro(Expression<Func<Libros, bool>> expression)
         {
             List<Libros> Lista = new List<Libros>();
             Contexto contexto = new Contexto();

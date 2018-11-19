@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RLibros));
             this.NobretextBox = new System.Windows.Forms.TextBox();
             this.LibroIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,18 +64,19 @@
             // 
             // LibroIdnumericUpDown
             // 
-            this.LibroIdnumericUpDown.Location = new System.Drawing.Point(91, 40);
+            this.LibroIdnumericUpDown.Location = new System.Drawing.Point(125, 45);
             this.LibroIdnumericUpDown.Name = "LibroIdnumericUpDown";
             this.LibroIdnumericUpDown.Size = new System.Drawing.Size(84, 20);
-            this.LibroIdnumericUpDown.TabIndex = 2;
+            this.LibroIdnumericUpDown.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(132, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 19;
             this.label6.Text = "Fecha Creacion";
             // 
             // FechadateTimePicker
@@ -84,14 +86,14 @@
             this.FechadateTimePicker.Location = new System.Drawing.Point(220, 16);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(99, 20);
-            this.FechadateTimePicker.TabIndex = 9;
+            this.FechadateTimePicker.TabIndex = 10;
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Location = new System.Drawing.Point(311, 266);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(65, 41);
-            this.Eliminarbutton.TabIndex = 17;
+            this.Eliminarbutton.TabIndex = 9;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
@@ -101,7 +103,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(180, 266);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
-            this.Guardarbutton.TabIndex = 16;
+            this.Guardarbutton.TabIndex = 6;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
@@ -111,17 +113,17 @@
             this.Nuevobutton.Location = new System.Drawing.Point(44, 266);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
-            this.Nuevobutton.TabIndex = 15;
+            this.Nuevobutton.TabIndex = 7;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(325, 42);
+            this.Buscarbutton.Location = new System.Drawing.Point(298, 42);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
-            this.Buscarbutton.TabIndex = 18;
+            this.Buscarbutton.TabIndex = 8;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
@@ -131,21 +133,21 @@
             this.ISBNtextBox.Location = new System.Drawing.Point(125, 115);
             this.ISBNtextBox.Name = "ISBNtextBox";
             this.ISBNtextBox.Size = new System.Drawing.Size(167, 20);
-            this.ISBNtextBox.TabIndex = 19;
+            this.ISBNtextBox.TabIndex = 2;
             // 
             // DescripciontextBox
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(125, 175);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(167, 20);
-            this.DescripciontextBox.TabIndex = 21;
+            this.DescripciontextBox.TabIndex = 4;
             // 
             // Categoriabutton
             // 
             this.Categoriabutton.Location = new System.Drawing.Point(298, 146);
             this.Categoriabutton.Name = "Categoriabutton";
             this.Categoriabutton.Size = new System.Drawing.Size(29, 22);
-            this.Categoriabutton.TabIndex = 23;
+            this.Categoriabutton.TabIndex = 18;
             this.Categoriabutton.Text = "+";
             this.Categoriabutton.UseVisualStyleBackColor = true;
             this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
@@ -156,7 +158,7 @@
             this.CategoriacomboBox.Location = new System.Drawing.Point(125, 148);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(167, 21);
-            this.CategoriacomboBox.TabIndex = 24;
+            this.CategoriacomboBox.TabIndex = 3;
             // 
             // EditoracomboBox
             // 
@@ -164,7 +166,7 @@
             this.EditoracomboBox.Location = new System.Drawing.Point(125, 201);
             this.EditoracomboBox.Name = "EditoracomboBox";
             this.EditoracomboBox.Size = new System.Drawing.Size(167, 21);
-            this.EditoracomboBox.TabIndex = 26;
+            this.EditoracomboBox.TabIndex = 5;
             // 
             // SuperErrorProvider
             // 
@@ -173,33 +175,37 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(13, 210);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 32;
+            this.label7.TabIndex = 14;
             this.label7.Text = "Casa Editora";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(13, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 31;
+            this.label5.TabIndex = 15;
             this.label5.Text = "Descripcion";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(13, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 30;
+            this.label4.TabIndex = 16;
             this.label4.Text = "Categoria";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(13, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
@@ -209,6 +215,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(13, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
@@ -218,6 +225,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
@@ -226,10 +234,10 @@
             // 
             // AddEditorial
             // 
-            this.AddEditorial.Location = new System.Drawing.Point(311, 205);
+            this.AddEditorial.Location = new System.Drawing.Point(298, 205);
             this.AddEditorial.Name = "AddEditorial";
             this.AddEditorial.Size = new System.Drawing.Size(29, 22);
-            this.AddEditorial.TabIndex = 33;
+            this.AddEditorial.TabIndex = 17;
             this.AddEditorial.Text = "+";
             this.AddEditorial.UseVisualStyleBackColor = true;
             this.AddEditorial.Click += new System.EventHandler(this.AddEditorial_Click);
@@ -239,6 +247,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(405, 331);
             this.Controls.Add(this.AddEditorial);
             this.Controls.Add(this.label7);

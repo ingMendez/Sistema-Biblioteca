@@ -27,11 +27,14 @@ namespace SistemaBiblioteca.BLL
                     contexto.SaveChanges();
                     paso = true;
                 }
-                contexto.Dispose();
-            }
+             }
             catch (Exception)
             {
                 throw;
+            }
+            finally {
+
+                contexto.Dispose();
             }
             return paso;
         }
@@ -39,6 +42,7 @@ namespace SistemaBiblioteca.BLL
 
         public static bool Modificar(Prestamo _prestamo)
         {
+
             bool paso = false;
 
             Contexto contexto = new Contexto();
@@ -48,14 +52,41 @@ namespace SistemaBiblioteca.BLL
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
-                }
-                contexto.Dispose();
+                }           
             }
             catch (Exception)
             {
                 throw;
             }
-            return paso;
+            finally {
+                contexto.Dispose();
+            }
+            return paso;/*bool paso = false;
+
+            Contexto contexto = new Contexto();
+            try
+            {
+
+                var anterior = contexto.Prestamo.Find(_prestamo.LibroID);
+                foreach (var item in anterior.Detalle)
+                {
+                    if (!_prestamo.Detalle.Exists(d => d.ID == item.LibroID))
+                    {
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+                contexto.Entry(_prestamo).State = EntityState.Modified;
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
+        }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;*/
         }
 
 
@@ -66,19 +97,22 @@ namespace SistemaBiblioteca.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Prestamo _prestamo = contexto.Prestamo.Find(id);
+                //Prestamo _prestamo = contexto.Prestamo.Find(id);
+                var eliminar = contexto.Prestamo.Find(id);
 
-                contexto.Prestamo.Remove(_prestamo);
+                contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
 
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                paso = (contexto.SaveChanges() > 0);
+              
+               
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return paso;
         }
@@ -91,11 +125,16 @@ namespace SistemaBiblioteca.BLL
             try
             {
                 _prestamo = contexto.Prestamo.Find(id);
-                contexto.Dispose();
+                // el Count() es para hacer al lazyloading cargar los detalles
+                _prestamo.Detalle.Count();
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return _prestamo;
         }
@@ -103,21 +142,25 @@ namespace SistemaBiblioteca.BLL
 
         public static List<Prestamo> GetList(Expression<Func<Prestamo, bool>> expression)
         {
-            List<Prestamo> _prestamo = new List<Prestamo>();
+            List<Prestamo> Lista = new List<Prestamo>();
             Contexto contexto = new Contexto();
 
             try
             {
-                _prestamo = contexto.Prestamo.Where(expression).ToList();
-                contexto.Dispose();
+                Lista = contexto.Prestamo.Where(expression).ToList();
+               // contexto.Dispose();
 
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            {
+                contexto.Dispose();
+            }
 
-            return _prestamo;
+            return Lista;
         }
 
        /* public static DateTime PorcientoGanancia(DateTime vencimiento)

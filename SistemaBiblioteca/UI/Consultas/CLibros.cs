@@ -70,6 +70,8 @@ namespace SistemaBiblioteca.UI.Consultas
         
             Consulta_dataGridView.Columns[0].Visible= false;
             Consulta_dataGridView.Columns[7].Visible = false;
+            Consulta_dataGridView.Columns[3].Visible = false;
+            Consulta_dataGridView.Columns[5].Visible = false;
 
 
             //  Consulta_dataGridView.DataSource;

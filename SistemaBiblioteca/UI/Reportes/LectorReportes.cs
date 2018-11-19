@@ -16,14 +16,14 @@ namespace SistemaBiblioteca.UI.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LibroReport : ReportClass {
+    public class LectorReportes : ReportClass {
         
-        public LibroReport() {
+        public LectorReportes() {
         }
         
         public override string ResourceName {
             get {
-                return "LibroReport.rpt";
+                return "LectorReportes.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SistemaBiblioteca.UI.Reportes {
         
         public override string FullResourceName {
             get {
-                return "SistemaBiblioteca.UI.Reportes.LibroReport.rpt";
+                return "SistemaBiblioteca.UI.Reportes.LectorReportes.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SistemaBiblioteca.UI.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLibroReport : Component, ICachedReport {
+    public class CachedLectorReportes : Component, ICachedReport {
         
-        public CachedLibroReport() {
+        public CachedLectorReportes() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SistemaBiblioteca.UI.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LibroReport rpt = new LibroReport();
+            LectorReportes rpt = new LectorReportes();
             rpt.Site = this.Site;
             return rpt;
         }
