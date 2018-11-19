@@ -75,11 +75,7 @@ namespace SistemaBiblioteca.UI.Registros
                 DireccionTextBox.Focus();
                 paso = false;
             }
-            if (FechadateTimePicker.Value !=DateTime.Now){
-                SuperErrorProvider.SetError(FechadateTimePicker, "fecha incorreta");
-                FechadateTimePicker.Focus();
-                paso = false;
-            }
+           
             return paso;
         }
 

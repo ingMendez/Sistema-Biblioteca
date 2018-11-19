@@ -14,7 +14,7 @@ namespace SistemaBiblioteca.UI.Registros
 {
     public partial class RLibros : Form
     {
-        private RepositorioBase<Libros> repos;
+        private RepositorioBase<Libros> repositorio;
 
         public RLibros()
         {
@@ -81,23 +81,25 @@ namespace SistemaBiblioteca.UI.Registros
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            repos = new RepositorioBase<Libros>(new DAL.Contexto());
-            Libros tipo = repos.Buscar((int)LibroIdnumericUpDown.Value);
+            repositorio = new RepositorioBase<Libros>(new DAL.Contexto());
+            Libros tipo = repositorio.Buscar((int)LibroIdnumericUpDown.Value);
             return (tipo != null);
         }
 
         private bool validar()
         {
             bool paso = true;
-            /*  if(IDEditorialnumericUpDown.Value != 0)
-              {
-                  SuperErrorProvider.SetError(IDEditorialnumericUpDown, "EL campod ebe de estar en 0");
-                   paso = false;
-              }*/
+          
             if (string.IsNullOrWhiteSpace(NobretextBox.Text))
             {
                 SuperErrorProvider.SetError(NobretextBox, "El campo no debe estar vacio");
                 NobretextBox.Focus();
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(ISBNtextBox.Text))
+            {
+                SuperErrorProvider.SetError(ISBNtextBox, "El Campo no debe estar vacio");
+                ISBNtextBox.Focus();
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(DescripciontextBox.Text))
@@ -118,18 +120,7 @@ namespace SistemaBiblioteca.UI.Registros
                 EditoracomboBox.Focus();
                 paso = false;
             }
-            if (FechadateTimePicker.Value > DateTime.Now)
-            {
-                SuperErrorProvider.SetError(FechadateTimePicker, "La fecha no es correcta");
-                FechadateTimePicker.Focus();
-                paso = false;
-            }
-            if (string.IsNullOrWhiteSpace(ISBNtextBox.Text))
-            {
-                SuperErrorProvider.SetError(ISBNtextBox, "El Campo no debe estar vacio");
-                ISBNtextBox.Focus();
-                paso = false;
-            }
+          
             return paso;
         }
 
@@ -148,7 +139,7 @@ namespace SistemaBiblioteca.UI.Registros
             Libros _libro;
             bool paso = false;
 
-            if (validar())
+            if (!validar())
             {
                 MessageBox.Show("Debe Llenar los Campos Indicados", "Validacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

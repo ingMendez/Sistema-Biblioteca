@@ -15,6 +15,7 @@ namespace SistemaBiblioteca.DAL
         public DbSet<TipoEditorial> Editorial { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Categoria> categorias { get; set; }
+       // public DbSet<PrestamoDetalle> Detalle { get; set; }
         
 
         public Contexto() : base("ConStr")

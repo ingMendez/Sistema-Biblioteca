@@ -123,7 +123,7 @@
             // PrestamoDetalleDataGridView
             // 
             this.PrestamoDetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PrestamoDetalleDataGridView.Location = new System.Drawing.Point(41, 157);
+            this.PrestamoDetalleDataGridView.Location = new System.Drawing.Point(31, 184);
             this.PrestamoDetalleDataGridView.Name = "PrestamoDetalleDataGridView";
             this.PrestamoDetalleDataGridView.Size = new System.Drawing.Size(406, 203);
             this.PrestamoDetalleDataGridView.TabIndex = 8;
@@ -131,7 +131,7 @@
             // RemoverButton
             // 
             this.RemoverButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.RemoverButton.Location = new System.Drawing.Point(43, 361);
+            this.RemoverButton.Location = new System.Drawing.Point(31, 387);
             this.RemoverButton.Name = "RemoverButton";
             this.RemoverButton.Size = new System.Drawing.Size(85, 29);
             this.RemoverButton.TabIndex = 87;
@@ -142,7 +142,7 @@
             // EliminarButton
             // 
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EliminarButton.Location = new System.Drawing.Point(358, 406);
+            this.EliminarButton.Location = new System.Drawing.Point(352, 421);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(85, 32);
             this.EliminarButton.TabIndex = 90;
@@ -153,7 +153,7 @@
             // GuardarButton
             // 
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GuardarButton.Location = new System.Drawing.Point(212, 406);
+            this.GuardarButton.Location = new System.Drawing.Point(206, 421);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(93, 32);
             this.GuardarButton.TabIndex = 89;
@@ -164,7 +164,7 @@
             // NuevoButton
             // 
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NuevoButton.Location = new System.Drawing.Point(66, 406);
+            this.NuevoButton.Location = new System.Drawing.Point(60, 421);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(91, 32);
             this.NuevoButton.TabIndex = 88;
@@ -190,7 +190,7 @@
             // AgregarButtton
             // 
             this.AgregarButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.AgregarButtton.Location = new System.Drawing.Point(343, 122);
+            this.AgregarButtton.Location = new System.Drawing.Point(352, 154);
             this.AgregarButtton.Name = "AgregarButtton";
             this.AgregarButtton.Size = new System.Drawing.Size(85, 29);
             this.AgregarButtton.TabIndex = 92;
@@ -209,7 +209,7 @@
             // 
             // UsuarioTextBox
             // 
-            this.UsuarioTextBox.Location = new System.Drawing.Point(358, 16);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(326, 17);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(156, 20);
             this.UsuarioTextBox.TabIndex = 94;
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(526, 450);
+            this.ClientSize = new System.Drawing.Size(513, 474);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.AgregarButtton);

@@ -14,13 +14,13 @@ namespace SistemaBiblioteca.UI.Registros
 {
     public partial class RPrestamo : Form
     {
-         List<PrestamoDetalle> detalle;
+       //  List<PrestamoDetalle> detalle;
         public RPrestamo()
         {
             InitializeComponent();
             LlenaCombox();
             CargarUsuario();
-            detalle = new List<PrestamoDetalle>();
+         //   detalle = new List<PrestamoDetalle>();
             LibrocomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LectorcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
            // visibilidad()
@@ -40,20 +40,21 @@ namespace SistemaBiblioteca.UI.Registros
             LectorcomboBox.SelectedIndex = 0; 
             LibrocomboBox.SelectedIndex = -1;
             FechadateTimePicker.Value = DateTime.Now;
-            PrestamoDetalleDataGridView = null;
+            PrestamoDetalleDataGridView.DataSource = null;
        }
 
-        private Prestamo LlenaCampo(Prestamo prestamo)
+        private void LlenaCampo(Prestamo prestamo)
         {
+        
             prestamoidnumericUpDown.Value = prestamo.PrestamoID;
             LectorcomboBox.SelectedValue = prestamo.LectorID;
             FechadateTimePicker.Value = prestamo.Fecha;
-
+           // PrestamoDetalleDataGridView.DataSource = null;
             PrestamoDetalleDataGridView.DataSource = prestamo.Detalle;
-
+            
             PrestamoDetalleDataGridView.Columns["id"].Visible = false;
-            PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
-            return prestamo;
+             PrestamoDetalleDataGridView.Columns["Prestamoid"].Visible = false;
+            
         }
 
         private void visibilidad()
@@ -81,6 +82,7 @@ namespace SistemaBiblioteca.UI.Registros
                     );
 
             }
+
             return prestamo;
 
         }
@@ -97,7 +99,7 @@ namespace SistemaBiblioteca.UI.Registros
             RepositorioBase<Lector> lectores = new RepositorioBase<Lector>(new Contexto());
             RepositorioBase<Libros> libro = new RepositorioBase<Libros>(new Contexto());
 
-          
+            
             LectorcomboBox.DataSource = lectores.GetList(c => true);
             LectorcomboBox.ValueMember = "LectorID";
             LectorcomboBox.DisplayMember = "Nombre";
@@ -137,11 +139,13 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
             }
+
         }
 
         private void AgregarButtton_Click_1(object sender, EventArgs e)
         {
-            if (Validar())
+            List<PrestamoDetalle> detalle = new List<PrestamoDetalle>();
+            if (!Validar())
             {
 
             }
@@ -174,21 +178,21 @@ namespace SistemaBiblioteca.UI.Registros
                 }
 
 
-                /*detalle.Add(
-                        new PrestamoDetalle(
-                           id: 0,
-                           prestamoid: (int)prestamoidnumericUpDown.Value,
-                           lectorid: (int)LectorcomboBox.SelectedValue,
-                           libroid: (int)LibrocomboBox.SelectedValue
-                           ));*/
+            /*detalle.Add(
+                    new PrestamoDetalle(
+                       id: 0,
+                       prestamoid: (int)prestamoidnumericUpDown.Value,
+                       lectorid: (int)LectorcomboBox.SelectedValue,
+                       libroid: (int)LibrocomboBox.SelectedValue
+                       ));*/
 
 
 
-                PrestamoDetalleDataGridView.DataSource = null;
-                PrestamoDetalleDataGridView.DataSource = detalle;
-            PrestamoDetalleDataGridView.Columns[0].Visible = false;
-            PrestamoDetalleDataGridView.Columns[2].Visible = false;
-
+            PrestamoDetalleDataGridView.DataSource = null;
+            PrestamoDetalleDataGridView.DataSource = detalle;
+            // PrestamoDetalleDataGridView.Columns[0].Visible = false;
+            // PrestamoDetalleDataGridView.Columns[2].Visible = false;
+            Llenarvalores();
 
 
         }
@@ -210,6 +214,7 @@ namespace SistemaBiblioteca.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+
             Prestamo prestamo;
             bool Paso = false;
             LlenaCombox();
@@ -230,7 +235,7 @@ namespace SistemaBiblioteca.UI.Registros
                     MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LlenaCombox();
-                PrestamoDetalleDataGridView.ClearSelection();
+                PrestamoDetalleDataGridView.DataSource = null;
                 
             }
             else
@@ -289,6 +294,7 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 MessageBox.Show("Encontrado !!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LlenaCampo(prestamo);
+               // Llenarvalores();
             }
             else
                 MessageBox.Show("No se encontró!!!", "Falló",
