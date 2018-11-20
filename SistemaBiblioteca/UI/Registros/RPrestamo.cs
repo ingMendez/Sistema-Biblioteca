@@ -39,7 +39,7 @@ namespace SistemaBiblioteca.UI.Registros
             SuperErrorProvider.Clear();
             LectorcomboBox.SelectedIndex = 0; 
             LibrocomboBox.SelectedIndex = -1;
-            FechadateTimePicker.Value = DateTime.Now;
+            FechadateTimePicker.Value = DateTime.Now.Date;
             PrestamoDetalleDataGridView.DataSource = null;
             this.Detalle = new List<PrestamoDetalle>();
             CargarGrid();
@@ -139,19 +139,8 @@ namespace SistemaBiblioteca.UI.Registros
         {
             SuperErrorProvider.Clear();
             Limpiar();
+            Limpiar();
             
-        }
-
-        
-        private void Llenarvalores()
-        {
-            List<PrestamoDetalle> detalle = new List<PrestamoDetalle>();
-
-            if (PrestamoDetalleDataGridView.DataSource != null)
-            {
-                detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
-            }
-
         }
 
         private void AgregarButtton_Click_1(object sender, EventArgs e)
@@ -167,7 +156,7 @@ namespace SistemaBiblioteca.UI.Registros
                    id: 0,
                     prestamoid : (int)prestamoidnumericUpDown.Value,
                     // PrestamoDetalleDataGridView.ro
-                    lectorid: (int)LectorcomboBox.SelectedValue,
+                    lectorid:(int)LectorcomboBox.SelectedValue,
                     libroid: (int)LibrocomboBox.SelectedValue
                       )
                   );
@@ -229,6 +218,7 @@ namespace SistemaBiblioteca.UI.Registros
                // PrestamoDetalleDataGridView.Columns[2].Visible = false;
               // Llenarvalores();
               */
+
 
         }
 

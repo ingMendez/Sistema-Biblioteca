@@ -14,6 +14,7 @@ namespace SistemaBiblioteca.DAL
         public DbSet<Prestamo> Prestamo { get; set; }
         public DbSet<TipoEditorial> Editorial { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Administrador> Administrador { get; set; }
         public DbSet<Categoria> categorias { get; set; }
        // public DbSet<PrestamoDetalle> Detalle { get; set; }
         

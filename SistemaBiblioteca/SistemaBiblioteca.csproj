@@ -58,6 +58,7 @@
     <Compile Include="BLL\RepositoryBase.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Administrador.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Lector.cs" />
     <Compile Include="Entidades\Libros.cs" />

@@ -3,6 +3,7 @@ using SistemaBiblioteca.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -114,6 +115,37 @@ namespace SistemaBiblioteca.BLL
 
                 return usuarios;
             }
-       
+       /* public static bool EntrarUsuario()
+        {
+             SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-ABF85DA\\SQLEXPRESS; Initial Catalog = BiBliotecaDB; "
+            + "Integrated Security=true;");
+
+            conexion.Open();
+            string cadena = "select Email, Contraseña from Usuarios where Email ='" + RLogin.EmailTextBox.Text + "' and Contraseña = '" + ContraseñaTextBox.Text + "' ";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            SqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+
+                if ((registro["Email"].ToString() == EmailTextBox.Text) && (registro["Contraseña"].ToString() == ContraseñaTextBox.Text))
+                {
+                    MessageBox.Show("Correcto");
+                    Form1 principal = new Form1();
+                    principal.Show();
+                    principal.Activos();
+                    this.Hide();
+                }
+            }
+            else
+                MessageBox.Show("El Email o la Contraseña estan incorrectos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            conexion.Close();
+        }*/
+       /* public static bool entrarAdmin()
+        {
+
+        }*/
+
+
     }
 }
