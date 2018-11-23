@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaBiblioteca.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,21 @@ namespace SistemaBiblioteca.UI.Reportes
 {
     public partial class UsuarioReview : Form
     {
-        public UsuarioReview()
+        private List<Usuario> usuario = new List<Usuario>();
+
+        public UsuarioReview(List<Usuario> Lista)
         {
             InitializeComponent();
+            this.usuario = Lista;
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+            UsuarioReportes usuario = new UsuarioReportes();
+            usuario.SetDataSource(usuario);
+            crystalReportViewer1.ReportSource = usuario;
+            usuario.Refresh();
         }
     }
 }

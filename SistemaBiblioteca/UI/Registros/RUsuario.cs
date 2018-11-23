@@ -76,12 +76,6 @@ namespace SistemaBiblioteca.UI.Registros
                     "Debe ingresar una Contraseña para el Usuario");
                 paso = true;
             }
-            if (FechadateTimePicker.Value!=DateTime.Now)
-            {
-                SuperErrorProvider.SetError(FechadateTimePicker,
-                    "Fecha incorrecta");
-                paso = true;
-            }
 
             return paso;
         }

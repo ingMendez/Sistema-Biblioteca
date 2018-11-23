@@ -1,4 +1,5 @@
 ﻿using SistemaBiblioteca.Entidades;
+using SistemaBiblioteca.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace SistemaBiblioteca.UI.Consultas
 {
     public partial class CUsuario : Form
     {
+        private List<Usuario> usuario = new List<Usuario>();
+
         public CUsuario()
         {
             InitializeComponent();
@@ -49,6 +52,17 @@ namespace SistemaBiblioteca.UI.Consultas
             }
             Consulta_dataGridView.DataSource = BLL.UsuarioBLL.GetList(filtro);
 
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (usuario.Count == 0)
+            {
+                MessageBox.Show("No hay datos pra mostrar en el Reporte");
+                return;
+            }
+            UsuarioReview lectorReview = new UsuarioReview(usuario);
+            lectorReview.ShowDialog();
         }
     }
 }

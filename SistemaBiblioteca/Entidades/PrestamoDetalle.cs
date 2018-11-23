@@ -14,7 +14,7 @@ namespace SistemaBiblioteca.Entidades
         public int PrestamoID { get; set; }
         public int LectorID { get; set; }
         public int LibroID { get; set; }
-       
+        Libros libro = new Libros();
        /* [/ForeignKey("PretamoID")]
         public virtual Prestamo _pretamo { get; set; }*/
 
@@ -31,12 +31,12 @@ namespace SistemaBiblioteca.Entidades
 
         }
 
-        public PrestamoDetalle(int id,int prestamoid,int lectorid,int libroid)
+        public PrestamoDetalle(int id,int prestamoid,int lectorid,string nombre)
         {
             ID = id;
             PrestamoID = PrestamoID;
             LectorID = lectorid;
-            LibroID = libroid;
+            libro.NombreLibro = nombre;
         }
 
     }

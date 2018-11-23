@@ -75,17 +75,17 @@ namespace SistemaBiblioteca.UI.Registros
                 prestamo.Fecha = FechadateTimePicker.Value;
 
 
-            /* foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
+             foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
               {
                   prestamo.AgregarDetalle(
                          ToInt(item.Cells["id"].Value),
                       ToInt(item.Cells["prestamoid"].Value),
                       ToInt(item.Cells["lectorid"].Value),
-                      ToInt(item.Cells["libroId"].Value)
+                      (item.Cells["nombre"].Value.ToString())
                     //  id, prestamoid, lectorid, libroId
                       );
 
-              }*/
+              }
             prestamo.Detalle = this.Detalle;
 
             return prestamo;
@@ -112,6 +112,8 @@ namespace SistemaBiblioteca.UI.Registros
             LibrocomboBox.DataSource = libro.GetList(c=> c.Disponibilidad ==true);
             LibrocomboBox.ValueMember = "LibroID";
             LibrocomboBox.DisplayMember = "NombreLibro";
+            
+
 
         }
         private bool Validar()
@@ -154,10 +156,10 @@ namespace SistemaBiblioteca.UI.Registros
             this.Detalle.Add(
                 new PrestamoDetalle(
                    id: 0,
-                    prestamoid : (int)prestamoidnumericUpDown.Value,
+                    prestamoid: (int)prestamoidnumericUpDown.Value,
                     // PrestamoDetalleDataGridView.ro
-                    lectorid:(int)LectorcomboBox.SelectedValue,
-                    libroid: (int)LibrocomboBox.SelectedValue
+                    lectorid: (int)LectorcomboBox.SelectedValue,
+                    nombre: LectorcomboBox.SelectedItem.ToString()
                       )
                   );
             CargarGrid();

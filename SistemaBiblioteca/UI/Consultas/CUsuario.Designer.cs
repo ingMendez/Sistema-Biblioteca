@@ -51,6 +51,7 @@
             this.Imprimirbutton.TabIndex = 61;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
