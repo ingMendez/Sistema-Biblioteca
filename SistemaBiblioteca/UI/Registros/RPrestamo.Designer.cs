@@ -46,6 +46,8 @@
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.AgregarButtton = new System.Windows.Forms.Button();
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.MatriculatextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
@@ -207,6 +209,22 @@
             this.UsuarioTextBox.Size = new System.Drawing.Size(156, 20);
             this.UsuarioTextBox.TabIndex = 94;
             // 
+            // MatriculatextBox
+            // 
+            this.MatriculatextBox.Location = new System.Drawing.Point(114, 135);
+            this.MatriculatextBox.Name = "MatriculatextBox";
+            this.MatriculatextBox.Size = new System.Drawing.Size(100, 20);
+            this.MatriculatextBox.TabIndex = 95;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 96;
+            this.label4.Text = "Matricula lector";
+            // 
             // RPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +232,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(488, 474);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.MatriculatextBox);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.BuscarButton);
@@ -259,5 +279,7 @@
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
         private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.TextBox UsuarioTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox MatriculatextBox;
     }
 }

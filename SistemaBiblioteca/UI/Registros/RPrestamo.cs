@@ -73,7 +73,7 @@ namespace SistemaBiblioteca.UI.Registros
                 prestamo.PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value);
                 prestamo.LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue);
                 prestamo.Fecha = FechadateTimePicker.Value;
-
+            prestamo.matricula = Convert.ToInt32(MatriculatextBox.Text);
 
              foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
               {
@@ -81,7 +81,8 @@ namespace SistemaBiblioteca.UI.Registros
                          ToInt(item.Cells["id"].Value),
                       ToInt(item.Cells["prestamoid"].Value),
                       ToInt(item.Cells["lectorid"].Value),
-                      (item.Cells["nombre"].Value.ToString())
+                      ToInt(item.Cells["libroid"].Value),
+                      ToInt(item.Cells["matricula"])
                     //  id, prestamoid, lectorid, libroId
                       );
 
@@ -159,9 +160,10 @@ namespace SistemaBiblioteca.UI.Registros
                     prestamoid: (int)prestamoidnumericUpDown.Value,
                     // PrestamoDetalleDataGridView.ro
                     lectorid: (int)LectorcomboBox.SelectedValue,
-                    nombre: LectorcomboBox.SelectedItem.ToString()
-                      )
-                  );
+                     libroID: (int)LibrocomboBox.SelectedValue,
+                     matricula:Convert.ToInt32(MatriculatextBox.Text)
+                      
+                  ));
             CargarGrid();
             LibrocomboBox.SelectAll();
 
