@@ -13,7 +13,7 @@ namespace SistemaBiblioteca.Entidades
         public int LectorID { get; set; }
         public int LibroID { get; set; }
         public DateTime  Fecha { get; set; }
-        public int matricula { get; set; }
+        public int Matricula { get; set; }
         public virtual List<PrestamoDetalle> Detalle { get; set; }
 
         public Prestamo()
@@ -24,12 +24,12 @@ namespace SistemaBiblioteca.Entidades
             PrestamoID = 0;
             LectorID = 0;
             LibroID = 0;
-            matricula = 0;
+            Matricula = 0;
             Fecha = DateTime.Now;
         }
         public void AgregarDetalle(int id,int prestamoid,int lectorid,int libroID,int matricula)
         {
-            this.Detalle.Add(new PrestamoDetalle(id, prestamoid,lectorid,libroID,matricula));
+            this.Detalle.Add(new PrestamoDetalle(matricula,id, prestamoid,lectorid,libroID));
         }
         public override string ToString()
         {

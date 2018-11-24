@@ -170,6 +170,12 @@
       <DependentUpon>LibrosReportes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Reportes\PrestamoReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\PrestamoReview.Designer.cs">
+      <DependentUpon>PrestamoReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\UsuarioReportes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,6 +249,9 @@
     <EmbeddedResource Include="UI\Reportes\LibrosReportes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LibrosReportes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\PrestamoReview.resx">
+      <DependentUpon>PrestamoReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\UsuarioReportes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

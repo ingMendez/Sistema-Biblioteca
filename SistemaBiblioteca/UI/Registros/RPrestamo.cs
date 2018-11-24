@@ -68,14 +68,15 @@ namespace SistemaBiblioteca.UI.Registros
         }*/
         private Prestamo LlenaClase()
         {
-            Prestamo prestamo = new Prestamo();
-            
-                prestamo.PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value);
-                prestamo.LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue);
-                prestamo.Fecha = FechadateTimePicker.Value;
-            prestamo.matricula = Convert.ToInt32(MatriculatextBox.Text);
+            Prestamo prestamo = new Prestamo
+            {
+                PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value),
+                LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue),
+                Fecha = FechadateTimePicker.Value,
+                Matricula = Convert.ToInt32(MatriculatextBox.Text)
+            };
 
-             foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
+            foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
               {
                   prestamo.AgregarDetalle(
                          ToInt(item.Cells["id"].Value),
@@ -157,11 +158,12 @@ namespace SistemaBiblioteca.UI.Registros
             this.Detalle.Add(
                 new PrestamoDetalle(
                    id: 0,
+                    matricula: Convert.ToInt32(MatriculatextBox.Text),
                     prestamoid: (int)prestamoidnumericUpDown.Value,
                     // PrestamoDetalleDataGridView.ro
                     lectorid: (int)LectorcomboBox.SelectedValue,
-                     libroID: (int)LibrocomboBox.SelectedValue,
-                     matricula:Convert.ToInt32(MatriculatextBox.Text)
+                     libroID: (int)LibrocomboBox.SelectedValue
+                 
                       
                   ));
             CargarGrid();

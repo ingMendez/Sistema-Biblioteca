@@ -1,4 +1,5 @@
 ﻿using SistemaBiblioteca.Entidades;
+using SistemaBiblioteca.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaBiblioteca.UI.Consultas
 {
     public partial class CLibros : Form
     {
+        private List<Libros> Libro = new List<Libros>();
         public CLibros()
         {
             InitializeComponent();
@@ -113,29 +115,40 @@ namespace SistemaBiblioteca.UI.Consultas
 
 
         }
-       /* private void Criterio()
-        {
-           // object sender;
-            KeyPressEventArgs e;
 
-            if (Char.IsDigit(e.KeyChar))
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (Libro.Count == 0)
             {
-                e.Handled = false;
+                MessageBox.Show("No hay datos pra mostrar en el Reporte");
+                return;
             }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
+            LibroReview libroReview = new LibroReview(Libro);
+            libroReview.ShowDialog();
+        }
+        /* private void Criterio()
+{
+   // object sender;
+    KeyPressEventArgs e;
+
+    if (Char.IsDigit(e.KeyChar))
+    {
+        e.Handled = false;
+    }
+    else if (Char.IsControl(e.KeyChar))
+    {
+        e.Handled = false;
+    }
+    else if (Char.IsSeparator(e.KeyChar))
+    {
+        e.Handled = false;
+    }
+    else
+    {
+        e.Handled = true;
+        MessageBox.Show("Solo se puede digitar Números", "Error",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}*/
     }
 }

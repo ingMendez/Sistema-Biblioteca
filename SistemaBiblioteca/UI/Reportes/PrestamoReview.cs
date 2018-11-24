@@ -10,21 +10,19 @@ using System.Windows.Forms;
 
 namespace SistemaBiblioteca.UI.Reportes
 {
-    public partial class LibroReview : Form
+    public partial class PrestamoReview : Form
     {
-        private List<Libros> Libro = new List<Libros>();
-        public LibroReview(List<Libros>Lista)
+        private List<Prestamo> prestamo = new List<Prestamo>();
+
+        public PrestamoReview(List<Prestamo>Lista)
         {
             InitializeComponent();
-            this.Libro = Lista;
+            this.prestamo = Lista;
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            LibrosReportes libroReporte = new LibrosReportes();
-            libroReporte.SetDataSource(Libro);
-            crystalReportViewer1.ReportSource = libroReporte;
-            libroReporte.Refresh();
+
         }
     }
 }
