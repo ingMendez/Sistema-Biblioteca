@@ -161,5 +161,15 @@ namespace SistemaBiblioteca.UI.Registros
                 FechadateTimePicker.Value = usuario.FechaCreacion;
             }
         }
+
+        private void NoTelefonoMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void NombresTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

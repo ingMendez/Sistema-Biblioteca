@@ -48,11 +48,18 @@ namespace SistemaBiblioteca.BLL
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(_prestamo).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
+                if (contexto.Prestamo.Add(_prestamo) != null)
                 {
-                    paso = true;
-                }           
+                    foreach (var item in _prestamo.Detalle)
+                    {
+                        contexto.Libro.Find(item.LibroID).Disponibilidad = false;
+                    }
+                    //  contexto.Entry(_prestamo).State = EntityState.Modified;
+                    paso = (contexto.SaveChanges() > 0);
+                    /*{
+                        paso = true;
+                    } */
+                }
             }
             catch (Exception)
             {
@@ -98,10 +105,18 @@ namespace SistemaBiblioteca.BLL
             try
             {
                 //Prestamo _prestamo = contexto.Prestamo.Find(id);
-                var eliminar = contexto.Prestamo.Find(id);
+                Prestamo prestamo = contexto.Prestamo.Find(id);
 
-                contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
+                foreach (var item in prestamo.Detalle)
+                {
+                    var eliminar = contexto.Prestamo.Find(id);
 
+                    contexto.Libro.Find(item.LibroID).Disponibilidad = true;
+                   // contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
+
+                }
+                //   contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
+                contexto.Prestamo.Remove(prestamo);
                 paso = (contexto.SaveChanges() > 0);
               
                

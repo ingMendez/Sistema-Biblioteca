@@ -80,8 +80,10 @@
             // 
             this.ContraseñaTextBox.Location = new System.Drawing.Point(178, 129);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.PasswordChar = '*';
             this.ContraseñaTextBox.Size = new System.Drawing.Size(131, 20);
             this.ContraseñaTextBox.TabIndex = 10;
+            this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // EmailTextBox
             // 

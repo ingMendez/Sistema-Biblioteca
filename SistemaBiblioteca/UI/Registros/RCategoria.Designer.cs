@@ -41,6 +41,8 @@
             this.IDCategorianumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDCategorianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +52,9 @@
             this.Buscarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Buscarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.BackgroundImage")));
             this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Buscarbutton.Location = new System.Drawing.Point(202, 12);
+            this.Buscarbutton.Location = new System.Drawing.Point(225, 29);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(51, 49);
+            this.Buscarbutton.Size = new System.Drawing.Size(51, 33);
             this.Buscarbutton.TabIndex = 28;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = false;
@@ -63,9 +65,9 @@
             this.Eliminarbutton.BackColor = System.Drawing.Color.White;
             this.Eliminarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.BackgroundImage")));
             this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Eliminarbutton.Location = new System.Drawing.Point(225, 167);
+            this.Eliminarbutton.Location = new System.Drawing.Point(225, 165);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(80, 49);
+            this.Eliminarbutton.Size = new System.Drawing.Size(71, 51);
             this.Eliminarbutton.TabIndex = 27;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = false;
@@ -76,9 +78,9 @@
             this.Guardarbutton.BackColor = System.Drawing.Color.White;
             this.Guardarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.BackgroundImage")));
             this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Guardarbutton.Location = new System.Drawing.Point(123, 167);
+            this.Guardarbutton.Location = new System.Drawing.Point(123, 165);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(82, 49);
+            this.Guardarbutton.Size = new System.Drawing.Size(73, 51);
             this.Guardarbutton.TabIndex = 26;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = false;
@@ -89,9 +91,9 @@
             this.Nuevobutton.BackColor = System.Drawing.Color.White;
             this.Nuevobutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.BackgroundImage")));
             this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 167);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 165);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(83, 49);
+            this.Nuevobutton.Size = new System.Drawing.Size(74, 51);
             this.Nuevobutton.TabIndex = 25;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = false;
@@ -104,14 +106,14 @@
             this.Direccicon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Direccicon.Location = new System.Drawing.Point(12, 98);
             this.Direccicon.Name = "Direccicon";
-            this.Direccicon.Size = new System.Drawing.Size(71, 17);
+            this.Direccicon.Size = new System.Drawing.Size(86, 17);
             this.Direccicon.TabIndex = 24;
-            this.Direccicon.Text = "Direccion";
+            this.Direccicon.Text = "Descripcion";
             // 
             // DescipcionTextBox
             // 
             this.DescipcionTextBox.BackColor = System.Drawing.Color.White;
-            this.DescipcionTextBox.Location = new System.Drawing.Point(95, 98);
+            this.DescipcionTextBox.Location = new System.Drawing.Point(102, 96);
             this.DescipcionTextBox.Multiline = true;
             this.DescipcionTextBox.Name = "DescipcionTextBox";
             this.DescipcionTextBox.Size = new System.Drawing.Size(208, 23);
@@ -131,7 +133,7 @@
             // NombretextBox
             // 
             this.NombretextBox.BackColor = System.Drawing.Color.White;
-            this.NombretextBox.Location = new System.Drawing.Point(95, 66);
+            this.NombretextBox.Location = new System.Drawing.Point(100, 66);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(208, 20);
             this.NombretextBox.TabIndex = 21;
@@ -139,7 +141,7 @@
             // IDCategorianumericUpDown
             // 
             this.IDCategorianumericUpDown.BackColor = System.Drawing.Color.White;
-            this.IDCategorianumericUpDown.Location = new System.Drawing.Point(95, 37);
+            this.IDCategorianumericUpDown.Location = new System.Drawing.Point(100, 37);
             this.IDCategorianumericUpDown.Name = "IDCategorianumericUpDown";
             this.IDCategorianumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.IDCategorianumericUpDown.TabIndex = 20;
@@ -159,6 +161,25 @@
             // 
             this.SuperErrorProvider.ContainerControl = this;
             // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.Enabled = false;
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(100, 11);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.FechadateTimePicker.TabIndex = 29;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(9, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Fecha Creacion";
+            // 
             // RCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +188,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(327, 251);
+            this.Controls.Add(this.FechadateTimePicker);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -199,5 +222,7 @@
         private System.Windows.Forms.NumericUpDown IDCategorianumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.Label label6;
     }
 }

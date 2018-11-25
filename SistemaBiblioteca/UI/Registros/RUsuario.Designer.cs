@@ -77,6 +77,7 @@
             this.NoTelefonoMaskedTextBox.Name = "NoTelefonoMaskedTextBox";
             this.NoTelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoTelefonoMaskedTextBox.TabIndex = 3;
+            this.NoTelefonoMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.NoTelefonoMaskedTextBox_MaskInputRejected);
             // 
             // label4
             // 
@@ -123,6 +124,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(162, 20);
             this.NombresTextBox.TabIndex = 1;
+            this.NombresTextBox.TextChanged += new System.EventHandler(this.NombresTextBox_TextChanged);
             // 
             // label2
             // 

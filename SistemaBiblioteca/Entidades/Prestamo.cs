@@ -27,9 +27,9 @@ namespace SistemaBiblioteca.Entidades
             Matricula = 0;
             Fecha = DateTime.Now;
         }
-        public void AgregarDetalle(int id,int prestamoid,int lectorid,int libroID,int matricula)
+        public void AgregarDetalle(int id,int prestamoid,int matricula,int libroId,int lectorid)
         {
-            this.Detalle.Add(new PrestamoDetalle(matricula,id, prestamoid,lectorid,libroID));
+            this.Detalle.Add(new PrestamoDetalle(id, prestamoid, matricula, libroId,lectorid));
         }
         public override string ToString()
         {

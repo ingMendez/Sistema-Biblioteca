@@ -15,6 +15,7 @@ namespace SistemaBiblioteca.Entidades
         public int LectorID { get; set; }
         public int LibroID { get; set; }
         public int Matricula { get; set; }
+       /// public DateTime Fecha { get; set; }
        // Libros libro = new Libros();
        /* [/ForeignKey("PretamoID")]
         public virtual Prestamo _pretamo { get; set; }*/
@@ -30,17 +31,21 @@ namespace SistemaBiblioteca.Entidades
             LectorID = 0;
             LibroID = 0;
             Matricula = 0;
+         //   Fecha = DateTime.Now;
 
 
         }
 
-        public PrestamoDetalle(int matricula,int id,int prestamoid,int lectorid,int libroID)
+        public PrestamoDetalle(int id,int prestamoid,int matricula,int libroId,int lectorid)
         {
             ID = id;
-            PrestamoID = PrestamoID;
+            PrestamoID = prestamoid;
+            Matricula = matricula;
+            LibroID = libroId;
             LectorID = lectorid;
-            LibroID = libroID;
-            Matricula = matricula; 
+         //   Fecha = fecha;
+           
+            
         }
 
     }

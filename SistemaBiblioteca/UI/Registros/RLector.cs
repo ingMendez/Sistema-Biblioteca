@@ -25,6 +25,7 @@ namespace SistemaBiblioteca.UI.Registros
         {
             IDnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
+            ApellidotextBox.Text = string.Empty;
             CedulatextBox.Text = string.Empty;
             NoTelefonoMaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
@@ -36,6 +37,7 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 LectorID = Convert.ToInt32(IDnumericUpDown.Value),
                 Nombre = NombretextBox.Text,
+                Apellido = ApellidotextBox.Text,
                 Cedula = CedulatextBox.Text,
                 Telefono = NoTelefonoMaskedTextBox.Text,
                 Direccion = DirecciontextBox.Text,
@@ -50,6 +52,7 @@ namespace SistemaBiblioteca.UI.Registros
 
             IDnumericUpDown.Value = lector.LectorID;
             NombretextBox.Text = lector.Nombre;
+            ApellidotextBox.Text = lector.Apellido;
             DirecciontextBox.Text = lector.Direccion;
             NoTelefonoMaskedTextBox.Text = lector.Telefono;
             CedulatextBox.Text =  lector.Cedula;
@@ -73,6 +76,13 @@ namespace SistemaBiblioteca.UI.Registros
                 NombretextBox.Focus();
                 paso = false;
             }
+            if (string.IsNullOrWhiteSpace(ApellidotextBox.Text))
+            {
+                SuperErrorProvider.SetError(ApellidotextBox, "El campo no debe estar vacio");
+                ApellidotextBox.Focus();
+                paso = false;
+            }
+
             if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
             {
                 SuperErrorProvider.SetError(DirecciontextBox, "El Campo no debe estar vacio");

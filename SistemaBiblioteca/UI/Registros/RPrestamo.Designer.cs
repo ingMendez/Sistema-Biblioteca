@@ -215,6 +215,7 @@
             this.MatriculatextBox.Name = "MatriculatextBox";
             this.MatriculatextBox.Size = new System.Drawing.Size(100, 20);
             this.MatriculatextBox.TabIndex = 95;
+            this.MatriculatextBox.TextChanged += new System.EventHandler(this.MatriculatextBox_TextChanged);
             // 
             // label4
             // 
@@ -252,6 +253,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RPrestamo";
             this.Text = "RPrestamo";
+            this.Load += new System.EventHandler(this.RPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();

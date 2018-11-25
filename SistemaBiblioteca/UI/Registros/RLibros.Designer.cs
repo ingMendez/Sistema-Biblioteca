@@ -90,6 +90,8 @@
             // 
             // Eliminarbutton
             // 
+            this.Eliminarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.BackgroundImage")));
+            this.Eliminarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Eliminarbutton.Location = new System.Drawing.Point(311, 266);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(65, 41);
@@ -100,9 +102,11 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(180, 266);
+            this.Guardarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.BackgroundImage")));
+            this.Guardarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Guardarbutton.Location = new System.Drawing.Point(182, 267);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(70, 41);
             this.Guardarbutton.TabIndex = 6;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -110,9 +114,11 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(44, 266);
+            this.Nuevobutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.BackgroundImage")));
+            this.Nuevobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Nuevobutton.Location = new System.Drawing.Point(46, 267);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
+            this.Nuevobutton.Size = new System.Drawing.Size(70, 40);
             this.Nuevobutton.TabIndex = 7;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -120,6 +126,8 @@
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.BackgroundImage")));
+            this.Buscarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Buscarbutton.Location = new System.Drawing.Point(298, 42);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
@@ -144,12 +152,13 @@
             // 
             // Categoriabutton
             // 
+            this.Categoriabutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Categoriabutton.Location = new System.Drawing.Point(298, 146);
             this.Categoriabutton.Name = "Categoriabutton";
             this.Categoriabutton.Size = new System.Drawing.Size(29, 22);
             this.Categoriabutton.TabIndex = 18;
             this.Categoriabutton.Text = "+";
-            this.Categoriabutton.UseVisualStyleBackColor = true;
+            this.Categoriabutton.UseVisualStyleBackColor = false;
             this.Categoriabutton.Click += new System.EventHandler(this.Categoriabutton_Click);
             // 
             // CategoriacomboBox
@@ -234,12 +243,13 @@
             // 
             // AddEditorial
             // 
+            this.AddEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.AddEditorial.Location = new System.Drawing.Point(298, 205);
             this.AddEditorial.Name = "AddEditorial";
             this.AddEditorial.Size = new System.Drawing.Size(29, 22);
             this.AddEditorial.TabIndex = 17;
             this.AddEditorial.Text = "+";
-            this.AddEditorial.UseVisualStyleBackColor = true;
+            this.AddEditorial.UseVisualStyleBackColor = false;
             this.AddEditorial.Click += new System.EventHandler(this.AddEditorial_Click);
             // 
             // RLibros

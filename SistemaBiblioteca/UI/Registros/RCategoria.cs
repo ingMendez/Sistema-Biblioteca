@@ -25,6 +25,7 @@ namespace SistemaBiblioteca.UI.Registros
             IDCategorianumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             DescipcionTextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
         }
 
         private Categoria LlenaClase()
@@ -33,7 +34,8 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 CategoriaID = Convert.ToInt32(IDCategorianumericUpDown.Value),
                 Nombre = NombretextBox.Text,
-                descripcion = DescipcionTextBox.Text
+                descripcion = DescipcionTextBox.Text,
+                FechaCreacion = FechadateTimePicker.Value
             };
             return tipo;
         }
@@ -43,6 +45,7 @@ namespace SistemaBiblioteca.UI.Registros
             IDCategorianumericUpDown.Value = tipo.CategoriaID;
             NombretextBox.Text = tipo.Nombre;
             DescipcionTextBox.Text = tipo.descripcion;
+            FechadateTimePicker.Value = tipo.FechaCreacion;
         }
 
         private bool ExisteEnLaBaseDeDatos()
