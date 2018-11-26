@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RLogin));
             this.SalirButton = new System.Windows.Forms.Button();
             this.EntrarButton = new System.Windows.Forms.Button();
@@ -36,11 +37,9 @@
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Admin = new System.Windows.Forms.RadioButton();
-            this.Usuario = new System.Windows.Forms.RadioButton();
-            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // SalirButton
@@ -110,38 +109,9 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Email";
             // 
-            // Admin
+            // errorProvider1
             // 
-            this.Admin.AutoSize = true;
-            this.Admin.Checked = true;
-            this.Admin.Location = new System.Drawing.Point(81, 8);
-            this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(88, 17);
-            this.Admin.TabIndex = 14;
-            this.Admin.TabStop = true;
-            this.Admin.Text = "Administrador";
-            this.Admin.UseVisualStyleBackColor = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(8, 7);
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(61, 17);
-            this.Usuario.TabIndex = 15;
-            this.Usuario.Text = "Usuario";
-            this.Usuario.UseVisualStyleBackColor = true;
-            this.Usuario.CheckedChanged += new System.EventHandler(this.Usuario_CheckedChanged);
-            // 
-            // groupBox
-            // 
-            this.groupBox.Controls.Add(this.Usuario);
-            this.groupBox.Controls.Add(this.Admin);
-            this.groupBox.Location = new System.Drawing.Point(175, 155);
-            this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(173, 27);
-            this.groupBox.TabIndex = 16;
-            this.groupBox.TabStop = false;
+            this.errorProvider1.ContainerControl = this;
             // 
             // RLogin
             // 
@@ -149,7 +119,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(352, 288);
-            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.EntrarButton);
             this.Controls.Add(this.pictureBox1);
@@ -161,8 +130,7 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.RLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox.ResumeLayout(false);
-            this.groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,8 +145,6 @@
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton Admin;
-        private System.Windows.Forms.RadioButton Usuario;
-        private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

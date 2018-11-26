@@ -31,7 +31,7 @@ namespace SistemaBiblioteca.UI.Consultas
                     break;
                 case 1:
 
-                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    id = Convert.ToInt32(ConsultanumericUpDown.Value);
                     filtro = a => a.UsuarioId == id;
                     break;
                 case 2:// por nombre
@@ -63,6 +63,50 @@ namespace SistemaBiblioteca.UI.Consultas
             }
             UsuarioReview lectorReview = new UsuarioReview(usuario);
             lectorReview.ShowDialog();
+        }
+
+        private void CUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Filtro_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Filtro_comboBox.SelectedIndex == 1)
+            {
+                Criterio_textBox.Visible = false;
+                ConsultanumericUpDown.Visible = true;
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+
+                Hasta_dateTimePicker.Visible = false;
+                Desde_dateTimePicker.Visible = false;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+                // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+
+            }
+            if (Filtro_comboBox.SelectedIndex == 2)
+            {
+                Criterio_textBox.Visible = true;
+                ConsultanumericUpDown.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+
+                Hasta_dateTimePicker.Visible = true;
+                Desde_dateTimePicker.Visible = true;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+                // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+
+            }
+
         }
     }
 }

@@ -40,7 +40,9 @@
             this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
+            this.ConsultanumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Imprimirbutton
@@ -71,7 +73,7 @@
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 47;
             this.label5.Text = "Fecha";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // Hasta_dateTimePicker
             // 
@@ -99,7 +101,7 @@
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 44;
             this.label4.Text = "Hasta";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // label3
             // 
@@ -109,11 +111,11 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 43;
             this.label3.Text = "Desde";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Criterio_textBox
             // 
-            this.Criterio_textBox.Location = new System.Drawing.Point(295, 16);
+            this.Criterio_textBox.Location = new System.Drawing.Point(305, 17);
             this.Criterio_textBox.Name = "Criterio_textBox";
             this.Criterio_textBox.Size = new System.Drawing.Size(139, 20);
             this.Criterio_textBox.TabIndex = 42;
@@ -127,7 +129,7 @@
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 41;
             this.label2.Text = "Consulta";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // Filtro_comboBox
             // 
@@ -151,7 +153,7 @@
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Consultar Por :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Consulta_dataGridView
             // 
@@ -162,11 +164,21 @@
             this.Consulta_dataGridView.TabIndex = 38;
             this.Consulta_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultadataGridView_CellContentClick);
             // 
+            // ConsultanumericUpDown
+            // 
+            this.ConsultanumericUpDown.Location = new System.Drawing.Point(305, 17);
+            this.ConsultanumericUpDown.Name = "ConsultanumericUpDown";
+            this.ConsultanumericUpDown.Size = new System.Drawing.Size(139, 20);
+            this.ConsultanumericUpDown.TabIndex = 51;
+            this.ConsultanumericUpDown.Visible = false;
+            // 
             // CLector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(544, 348);
+            this.Controls.Add(this.ConsultanumericUpDown);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);
@@ -182,6 +194,7 @@
             this.Name = "CLector";
             this.Text = "CLector";
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +214,6 @@
         private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Consulta_dataGridView;
+        private System.Windows.Forms.NumericUpDown ConsultanumericUpDown;
     }
 }

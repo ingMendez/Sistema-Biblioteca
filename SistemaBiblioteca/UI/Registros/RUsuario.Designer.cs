@@ -48,9 +48,13 @@
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AaminradioButton = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmailTextBox
@@ -147,7 +151,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.Color.White;
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EliminarButton.Location = new System.Drawing.Point(272, 265);
+            this.EliminarButton.Location = new System.Drawing.Point(279, 293);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(107, 23);
             this.EliminarButton.TabIndex = 7;
@@ -159,7 +163,7 @@
             // 
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GuardarButton.Location = new System.Drawing.Point(139, 265);
+            this.GuardarButton.Location = new System.Drawing.Point(146, 293);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(104, 23);
             this.GuardarButton.TabIndex = 6;
@@ -171,7 +175,7 @@
             // 
             this.NuevoButton.BackColor = System.Drawing.Color.White;
             this.NuevoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NuevoButton.Location = new System.Drawing.Point(5, 265);
+            this.NuevoButton.Location = new System.Drawing.Point(12, 293);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(99, 23);
             this.NuevoButton.TabIndex = 5;
@@ -222,13 +226,48 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.FechadateTimePicker.TabIndex = 85;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.AaminradioButton);
+            this.groupBox1.Location = new System.Drawing.Point(26, 239);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 48);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pocision";
+            // 
+            // AaminradioButton
+            // 
+            this.AaminradioButton.AutoSize = true;
+            this.AaminradioButton.Location = new System.Drawing.Point(6, 19);
+            this.AaminradioButton.Name = "AaminradioButton";
+            this.AaminradioButton.Size = new System.Drawing.Size(83, 17);
+            this.AaminradioButton.TabIndex = 0;
+            this.AaminradioButton.TabStop = true;
+            this.AaminradioButton.Text = "Adminitrador";
+            this.AaminradioButton.UseVisualStyleBackColor = true;
+          
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(96, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Usuario";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // RUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(400, 309);
+            this.ClientSize = new System.Drawing.Size(400, 328);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.EmailTextBox);
@@ -248,9 +287,12 @@
             this.Controls.Add(this.label1);
             this.Name = "RUsuario";
             this.Text = "RUsuario";
+            this.Load += new System.EventHandler(this.RUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +318,8 @@
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton AaminradioButton;
     }
 }

@@ -170,6 +170,12 @@
       <DependentUpon>LibrosReportes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Reportes\PrestamoReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestamoReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\PrestamoReview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LibrosReportes.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\PrestamoReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrestamoReporte.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\PrestamoReview.resx">
       <DependentUpon>PrestamoReview.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +271,7 @@
       <DependentUpon>UsuarioReview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\SistemaBiblioteca.Entidades.PrestamoDetalle.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -273,7 +284,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\Scripts\" />
-    <Folder Include="Properties\DataSources\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

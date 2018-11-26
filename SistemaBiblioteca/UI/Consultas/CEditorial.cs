@@ -31,7 +31,7 @@ namespace SistemaBiblioteca.UI.Consultas
             {
                 case 0: /// todos
                     break;
-                case 1:
+                case 1://por Id
 
                     id = Convert.ToInt32(Criterio_textBox.Text);
                     filtro = a => a.EditarialID == id;

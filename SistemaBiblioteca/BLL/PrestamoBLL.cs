@@ -141,6 +141,8 @@ namespace SistemaBiblioteca.BLL
             {
                 _prestamo = contexto.Prestamo.Find(id);
                 // el Count() es para hacer al lazyloading cargar los detalles
+                if (_prestamo == null)
+                    return _prestamo;
                 _prestamo.Detalle.Count();
             }
             catch (Exception)

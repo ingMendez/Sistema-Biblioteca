@@ -20,6 +20,8 @@ namespace SistemaBiblioteca.Entidades
 
             public string Contraseña { get; set; }
 
+            public bool pocision { get; set; }
+
             public DateTime FechaCreacion { get; set; }
 
         public Usuario()
@@ -29,6 +31,7 @@ namespace SistemaBiblioteca.Entidades
                 NoTelefono = string.Empty;
                 Email = string.Empty;
                 Contraseña = string.Empty;
+                pocision = true;
                 FechaCreacion = DateTime.Now;
             }
     }

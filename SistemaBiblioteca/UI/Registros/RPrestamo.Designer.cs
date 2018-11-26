@@ -46,11 +46,13 @@
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.AgregarButtton = new System.Windows.Forms.Button();
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
-            this.MatriculatextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.MatriculatextBox = new System.Windows.Forms.MaskedTextBox();
+            this.prestamoDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,10 +125,12 @@
             // 
             // PrestamoDetalleDataGridView
             // 
+            this.PrestamoDetalleDataGridView.AllowUserToOrderColumns = true;
             this.PrestamoDetalleDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.PrestamoDetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PrestamoDetalleDataGridView.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.PrestamoDetalleDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.PrestamoDetalleDataGridView.Location = new System.Drawing.Point(31, 184);
+            this.PrestamoDetalleDataGridView.Location = new System.Drawing.Point(30, 183);
             this.PrestamoDetalleDataGridView.Name = "PrestamoDetalleDataGridView";
             this.PrestamoDetalleDataGridView.Size = new System.Drawing.Size(406, 203);
             this.PrestamoDetalleDataGridView.TabIndex = 8;
@@ -209,14 +213,6 @@
             this.UsuarioTextBox.Size = new System.Drawing.Size(156, 20);
             this.UsuarioTextBox.TabIndex = 94;
             // 
-            // MatriculatextBox
-            // 
-            this.MatriculatextBox.Location = new System.Drawing.Point(114, 135);
-            this.MatriculatextBox.Name = "MatriculatextBox";
-            this.MatriculatextBox.Size = new System.Drawing.Size(100, 20);
-            this.MatriculatextBox.TabIndex = 95;
-            this.MatriculatextBox.TextChanged += new System.EventHandler(this.MatriculatextBox_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -226,15 +222,28 @@
             this.label4.TabIndex = 96;
             this.label4.Text = "Matricula lector";
             // 
+            // MatriculatextBox
+            // 
+            this.MatriculatextBox.Location = new System.Drawing.Point(114, 138);
+            this.MatriculatextBox.Mask = "0000-0000";
+            this.MatriculatextBox.Name = "MatriculatextBox";
+            this.MatriculatextBox.Size = new System.Drawing.Size(78, 20);
+            this.MatriculatextBox.TabIndex = 97;
+            this.MatriculatextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // prestamoDetalleBindingSource
+            // 
+            this.prestamoDetalleBindingSource.DataSource = typeof(SistemaBiblioteca.Entidades.PrestamoDetalle);
+            // 
             // RPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(488, 474);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.MatriculatextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.BuscarButton);
@@ -257,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prestamoidnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoDetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +292,7 @@
         private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox MatriculatextBox;
+        private System.Windows.Forms.BindingSource prestamoDetalleBindingSource;
+        private System.Windows.Forms.MaskedTextBox MatriculatextBox;
     }
 }

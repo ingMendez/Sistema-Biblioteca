@@ -1,6 +1,9 @@
-﻿using System;
+﻿using SistemaBiblioteca.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SistemaBiblioteca
@@ -12,7 +15,7 @@ namespace SistemaBiblioteca
         /// </summary>
         [STAThread]
         static void Main()
-        {
+{
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             RLogin rg = new RLogin();
@@ -23,6 +26,14 @@ namespace SistemaBiblioteca
                 rg.Dispose();
                 Application.Run(new Form1());
             }
+        }
+        public static Form1 menu = null;
+        public static Usuario usuario = null;
+        public static RLogin login = null;
+        public static string Hash(string input)
+        {
+            var hash = (new SHA1Managed()).ComputeHash(Encoding.UTF8.GetBytes(input));
+            return string.Join("", hash.Select(b => b.ToString("x2")).ToArray());
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -42,16 +41,6 @@
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Location = new System.Drawing.Point(27, 312);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(75, 35);
-            this.Imprimirbutton.TabIndex = 37;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
@@ -166,8 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(554, 353);
-            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Hasta_dateTimePicker);
@@ -189,8 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;

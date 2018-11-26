@@ -20,8 +20,8 @@ namespace SistemaBiblioteca.Entidades
        /* [/ForeignKey("PretamoID")]
         public virtual Prestamo _pretamo { get; set; }*/
 
-        [ForeignKey("LibroID")]
-        public virtual Libros Libro { get; set; }
+      /*  [ForeignKey("LibroID")]
+        public virtual Libros Libro { get; set; }*/
 
 
         public PrestamoDetalle()

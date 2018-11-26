@@ -28,7 +28,7 @@ namespace SistemaBiblioteca
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            registrarUsuarioToolStripMenuItem.Visible = Program.usuario.pocision;
         }
 
         private void RegistrarLibroToolStripMenuItem_Click(object sender, EventArgs e)

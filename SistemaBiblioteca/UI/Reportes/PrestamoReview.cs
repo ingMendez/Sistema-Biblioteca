@@ -22,7 +22,10 @@ namespace SistemaBiblioteca.UI.Reportes
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-
+            PrestamoReporte prestamoReview = new PrestamoReporte();
+            prestamoReview.SetDataSource(prestamo);
+            crystalReportViewer1.ReportSource = prestamoReview;
+            prestamoReview.Refresh();
         }
     }
 }

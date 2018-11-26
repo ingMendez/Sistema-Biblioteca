@@ -40,7 +40,9 @@
             this.Filtro_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
+            this.ConsultanumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Imprimirbutton
@@ -135,6 +137,7 @@
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);
             this.Filtro_comboBox.TabIndex = 52;
+            this.Filtro_comboBox.SelectedIndexChanged += new System.EventHandler(this.Filtro_comboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -153,11 +156,21 @@
             this.Consulta_dataGridView.Size = new System.Drawing.Size(528, 178);
             this.Consulta_dataGridView.TabIndex = 50;
             // 
+            // ConsultanumericUpDown
+            // 
+            this.ConsultanumericUpDown.Location = new System.Drawing.Point(302, 13);
+            this.ConsultanumericUpDown.Name = "ConsultanumericUpDown";
+            this.ConsultanumericUpDown.Size = new System.Drawing.Size(139, 20);
+            this.ConsultanumericUpDown.TabIndex = 62;
+            this.ConsultanumericUpDown.Visible = false;
+            // 
             // CUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(558, 341);
+            this.Controls.Add(this.ConsultanumericUpDown);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.label5);
@@ -172,7 +185,9 @@
             this.Controls.Add(this.Consulta_dataGridView);
             this.Name = "CUsuario";
             this.Text = "CUsuario";
+            this.Load += new System.EventHandler(this.CUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +207,6 @@
         private System.Windows.Forms.ComboBox Filtro_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Consulta_dataGridView;
+        private System.Windows.Forms.NumericUpDown ConsultanumericUpDown;
     }
 }

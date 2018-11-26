@@ -67,7 +67,8 @@
             "todo",
             "ID",
             "Nombre",
-            "Lector"});
+            "Lector",
+            "Fecha"});
             this.Filtro_comboBox.Location = new System.Drawing.Point(98, 54);
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);
@@ -152,11 +153,13 @@
             this.Imprimirbutton.TabIndex = 13;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // CPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(541, 383);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.button1);
@@ -172,6 +175,7 @@
             this.Controls.Add(this.ConsultadataGridView);
             this.Name = "CPrestamo";
             this.Text = "CPrestamo";
+            this.Load += new System.EventHandler(this.CPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

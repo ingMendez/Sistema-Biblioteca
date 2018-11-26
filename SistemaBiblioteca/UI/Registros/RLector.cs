@@ -262,5 +262,10 @@ namespace SistemaBiblioteca.UI.Registros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void RLector_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SistemaBiblioteca.BLL;
 using SistemaBiblioteca.DAL;
 using SistemaBiblioteca.Entidades;
+using SistemaBiblioteca.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace SistemaBiblioteca.UI.Consultas
     public partial class CPrestamo : Form
     {
         private RepositorioBase<Prestamo> repositorio;
+        private List<Prestamo> prestamo = new List<Prestamo>();
         public CPrestamo()
         {
             InitializeComponent();
@@ -51,23 +53,49 @@ namespace SistemaBiblioteca.UI.Consultas
                         id = Convert.ToInt32(Criterio_textBox.Text);
                         filtro = a => a.LibroID == id;
                         break;
+                    case 3:
+                        id = Convert.ToInt32(Criterio_textBox.Text);
+                        filtro = a => a.LectorID == id;
+                        break;
+                    case 4:
+                        filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+                        break;
 
                         ///FECHA          
 
 
 
-                }     
+                }
 
 
             }
             Lista = repositorio.GetList(p => true);
-
-            //filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
-            ConsultadataGridView.DataSource = repositorio.GetList(filtro);
+            prestamo = repositorio.GetList(filtro);
+            filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+            ConsultadataGridView.DataSource = prestamo;// repositorio.GetList(filtro);
 
         }
 
         private void HastadateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            PrestamoReporte reporte = new PrestamoReporte();
+
+            if(prestamo.Count == 0)
+            {
+                MessageBox.Show("No hay datos para presentar");
+                return;
+            }
+            PrestamoReview prestamoReporte = new PrestamoReview(prestamo);
+            prestamoReporte.ShowDialog();
+
+        }
+
+        private void CPrestamo_Load(object sender, EventArgs e)
         {
 
         }

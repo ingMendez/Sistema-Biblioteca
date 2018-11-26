@@ -26,7 +26,7 @@ namespace SistemaBiblioteca.UI.Consultas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
           
         }
@@ -63,17 +63,19 @@ namespace SistemaBiblioteca.UI.Consultas
                     filtro = a => a.ISBN.Contains(Criterio_textBox.Text);
                     break;
                 case 5:// por CATEGORIA
-                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    id = Convert.ToInt32(ConsultanumericUpDown.Value);
                     filtro = a => a.CategoriaID == id;
                     break;
 
             }
-            Consulta_dataGridView.DataSource = BLL.LibroBLL.GetList(filtro);
-        
+            Libro = BLL.LibroBLL.GetList(filtro);
+            Consulta_dataGridView.DataSource = Libro;   ///BLL.LibroBLL.GetList(filtro);
+            
             Consulta_dataGridView.Columns[0].Visible= false;
-            Consulta_dataGridView.Columns[7].Visible = false;
-            Consulta_dataGridView.Columns[3].Visible = false;
-            Consulta_dataGridView.Columns[5].Visible = false;
+            // Consulta_dataGridView.Columns[7].Visible = false;
+             Consulta_dataGridView.Columns[3].Visible = false;
+            Consulta_dataGridView.Columns[5].ReadOnly = true;
+            Consulta_dataGridView.ReadOnly = true;
 
 
             //  Consulta_dataGridView.DataSource;
@@ -91,6 +93,7 @@ namespace SistemaBiblioteca.UI.Consultas
             {
                 Criterio_textBox.Visible = false;
                 label2.Visible = false;
+                ConsultanumericUpDown.Visible = false;
             }
            if(Filtro_comboBox.SelectedIndex == 1)
             {
@@ -109,8 +112,60 @@ namespace SistemaBiblioteca.UI.Consultas
                 //Criterio_textBox = .Criterio_textBox();
                 
             }
-      
-            
+            if (Filtro_comboBox.SelectedIndex == 2)
+            {
+                Criterio_textBox.Visible = true;
+                ConsultanumericUpDown.Visible = false;
+                
+                label3.Visible = true;
+                label4.Visible = true;
+                label5.Visible = true;
+
+                Hasta_dateTimePicker.Visible = true;
+                Desde_dateTimePicker.Visible = true;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+                // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+
+            }
+            if (Filtro_comboBox.SelectedIndex == 4)
+            {
+                Criterio_textBox.Visible = true;
+                ConsultanumericUpDown.Visible = false;
+
+                label3.Visible = true;
+                label4.Visible = true;
+                label5.Visible = true;
+
+                Hasta_dateTimePicker.Visible = true;
+                Desde_dateTimePicker.Visible = true;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+                // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+
+            }
+            if (Filtro_comboBox.SelectedIndex == 5)
+            {
+                Criterio_textBox.Visible = false;
+                ConsultanumericUpDown.Visible = true;
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+
+                Hasta_dateTimePicker.Visible = false;
+                Desde_dateTimePicker.Visible = false;
+
+                Criterio_textBox.Visible = true;
+                label2.Visible = true;
+                // Criterio();
+                //Criterio_textBox = .Criterio_textBox();
+
+            }
+
 
 
 

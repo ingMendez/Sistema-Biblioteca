@@ -71,7 +71,6 @@
             // 
             // registrarLibroToolStripMenuItem
             // 
-            this.registrarLibroToolStripMenuItem.Enabled = false;
             this.registrarLibroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registrarLibroToolStripMenuItem.Image")));
             this.registrarLibroToolStripMenuItem.Name = "registrarLibroToolStripMenuItem";
             this.registrarLibroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -80,7 +79,6 @@
             // 
             // registrarCategoriaToolStripMenuItem
             // 
-            this.registrarCategoriaToolStripMenuItem.Enabled = false;
             this.registrarCategoriaToolStripMenuItem.Name = "registrarCategoriaToolStripMenuItem";
             this.registrarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarCategoriaToolStripMenuItem.Text = "Registrar Categoria";
@@ -95,7 +93,6 @@
             // 
             // registrarUsuarioToolStripMenuItem
             // 
-            this.registrarUsuarioToolStripMenuItem.Enabled = false;
             this.registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
             this.registrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";

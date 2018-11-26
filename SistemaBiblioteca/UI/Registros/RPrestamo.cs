@@ -23,8 +23,7 @@ namespace SistemaBiblioteca.UI.Registros
             this.Detalle = new List<PrestamoDetalle>();
             LibrocomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LectorcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-           // visibilidad()
-        }
+            }
 
        private void CargarUsuario()
         {
@@ -131,14 +130,17 @@ namespace SistemaBiblioteca.UI.Registros
                     "Debe Agregar los libros ");
                 Validar = true;
             }*/
-            if(this.Detalle.Count == 0)
+             if(LibrocomboBox.SelectedValue == null)
             {
-                SuperErrorProvider.SetError(PrestamoDetalleDataGridView,
-                    "Debe Agregar los libros ");
-                LibrocomboBox.Focus();
+                SuperErrorProvider.SetError(LibrocomboBox, "debe llenar este campo");
                 Validar = true;
             }
-            if(string.IsNullOrWhiteSpace(MatriculatextBox.Text))
+            if (LectorcomboBox.SelectedValue == null)
+            {
+                SuperErrorProvider.SetError(LectorcomboBox, "debe llenar este campo");
+                Validar = true;
+            }
+            if (string.IsNullOrWhiteSpace(MatriculatextBox.Text))
             {
                 SuperErrorProvider.SetError(MatriculatextBox, "debe llenar este campo");
                 Validar = true;
@@ -156,28 +158,47 @@ namespace SistemaBiblioteca.UI.Registros
 
         private void AgregarButtton_Click_1(object sender, EventArgs e)
         {
-
-            if (PrestamoDetalleDataGridView.DataSource != null)
+          
+            if (Validar())
             {
-                Detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
+                MessageBox.Show("Favor revisar todos los campos!!", "Validación!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SuperErrorProvider.Clear();
+                return;
             }
+            else
+            {
+                if (PrestamoDetalleDataGridView.DataSource != null)
+                {
+                    Detalle = (List<PrestamoDetalle>)PrestamoDetalleDataGridView.DataSource;
+                }
 
-            this.Detalle.Add(
-                new PrestamoDetalle(
-                   id: 0,
-                     prestamoid: (int)prestamoidnumericUpDown.Value,
-                     matricula: Convert.ToInt32(MatriculatextBox.Text),
-                     libroId: (int)LibrocomboBox.SelectedValue,
-                     lectorid: (int)LectorcomboBox.SelectedValue
-                    // fecha: FechadateTimePicker.Value
-                     // PrestamoDetalleDataGridView.ro
+                this.Detalle.Add(
+                    new PrestamoDetalle(
+                       id: 0,
+                         prestamoid: (int)prestamoidnumericUpDown.Value,
+                         matricula:(int)Convert.ToInt32(MatriculatextBox.Text),
+                         libroId: (int)LibrocomboBox.SelectedValue,
+                         lectorid: (int)LectorcomboBox.SelectedValue
+                     // fecha: FechadateTimePicker.Value
 
-                 ));
-            CargarGrid();
-            LibrocomboBox.SelectAll();
-           /* PrestamoDetalleDataGridView.Columns["id"].Visible = false;
-            PrestamoDetalleDataGridView.Columns["prestmoid"].Visible = false;*/
-
+                     ));
+                CargarGrid();
+                LibrocomboBox.SelectAll();
+                /* if (this.Detalle.Count == 0)
+                 {
+                     SuperErrorProvider.SetError(PrestamoDetalleDataGridView,
+                         "Debe Agregar los libros ");
+                     LibrocomboBox.Focus();
+                     // Validar = true;
+                 }*/
+                int ejemplo =0,error=0;
+                if (error == 1 && int.TryParse(LibrocomboBox.Text, out ejemplo ) == false)
+                {
+                  SuperErrorProvider.SetError(LibrocomboBox, "Debe de ser un numero");
+                 
+                }
+            }
         }
 
         private void RemoverButton_Click(object sender, EventArgs e)
@@ -207,47 +228,52 @@ namespace SistemaBiblioteca.UI.Registros
             {
                 MessageBox.Show("Favor revisar todos los campos!!", "Validación!!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SuperErrorProvider.Clear();
                 return;
             }
-
-            prestamo = LlenaClase();
-
-            if (prestamoidnumericUpDown.Value == 0)
+            else
             {
-               
 
-                       Paso = PrestamoBLL.Guardar(prestamo);
+
+
+                prestamo = LlenaClase();
+
+                if (prestamoidnumericUpDown.Value == 0)
+                {
+
+
+                    Paso = PrestamoBLL.Guardar(prestamo);
                     MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LlenaCombox();
-                PrestamoDetalleDataGridView.DataSource = null;
-                
-            }
-            else
-            {
-                int id = Convert.ToInt32(prestamoidnumericUpDown.Value);
-                Prestamo pres = PrestamoBLL.Buscar(id);
+                    LlenaCombox();
+                    PrestamoDetalleDataGridView.DataSource = null;
 
-                if (pres != null)
-                {
-                    Paso = PrestamoBLL.Modificar(prestamo);
-                    MessageBox.Show("Modificado!!", "Exito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Id no existe", "Falló",
+                {
+                    int id = Convert.ToInt32(prestamoidnumericUpDown.Value);
+                    Prestamo pres = PrestamoBLL.Buscar(id);
+
+                    if (pres != null)
+                    {
+                        Paso = PrestamoBLL.Modificar(prestamo);
+                        MessageBox.Show("Modificado!!", "Exito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Id no existe", "Falló",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (Paso)
+                {
+                    NuevoButton.PerformClick();
+                }
+                else
+                    MessageBox.Show("No se pudo guardar!!", "Fallo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            if (Paso)
-            {
-                NuevoButton.PerformClick();
-            }
-            else
-                MessageBox.Show("No se pudo guardar!!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-         
+            }         
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -276,16 +302,17 @@ namespace SistemaBiblioteca.UI.Registros
         {
             int id = Convert.ToInt32(prestamoidnumericUpDown.Value);
             Prestamo prestamo = PrestamoBLL.Buscar(id);
-
-            if (prestamo != null)
+           if (prestamo == null)
+            { 
+            MessageBox.Show("No se encontró!!!", "Falló",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }else
             {
                 MessageBox.Show("Encontrado !!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LlenaCampo(prestamo);
                // Llenarvalores();
             }
-            else
-                MessageBox.Show("No se encontró!!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
         
         private void LibrocomboBox_SelectedIndexChanged(object sender, EventArgs e)

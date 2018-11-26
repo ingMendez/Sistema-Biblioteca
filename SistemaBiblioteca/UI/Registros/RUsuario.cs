@@ -31,7 +31,8 @@ namespace SistemaBiblioteca.UI.Registros
                 Nombres = NombresTextBox.Text,
                 Email = EmailTextBox.Text,
                 NoTelefono = NoTelefonoMaskedTextBox.Text,
-                Contraseña = ContraseñaTextBox.Text
+                Contraseña = ContraseñaTextBox.Text,
+                pocision = (AaminradioButton.Checked)
             };
 
             return usuario;
@@ -91,40 +92,44 @@ namespace SistemaBiblioteca.UI.Registros
             bool paso = false;
 
             if (HayErrores())
+            {
                 MessageBox.Show("Debe llenar los campos indicados", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            usuario = LlenaClase();
-
-            if (UsuarioIdNumericUpDown.Value == 0)
-            {
-                paso = UsuarioBLL.Guardar(usuario);
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-                usuario = UsuarioBLL.Buscar(id);
+                usuario = LlenaClase();
 
-                if (usuario != null)
+                if (UsuarioIdNumericUpDown.Value == 0)
                 {
-                    paso = UsuarioBLL.Modificar(LlenaClase());
-                    MessageBox.Show("Modificado!!", "Exito",
+                    paso = UsuarioBLL.Guardar(usuario);
+                    MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Id no existe", "Falló",
+                {
+                    int id = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
+                    usuario = UsuarioBLL.Buscar(id);
+
+                    if (usuario != null)
+                    {
+                        paso = UsuarioBLL.Modificar(LlenaClase());
+                        MessageBox.Show("Modificado!!", "Exito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Id no existe", "Falló",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (paso)
+                {
+                    Limpiar();
+                }
+                else
+                    MessageBox.Show("No se pudo guardar!!", "Falló",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (paso)
-            {
-                Limpiar();
-            }
-            else
-                MessageBox.Show("No se pudo guardar!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -159,6 +164,7 @@ namespace SistemaBiblioteca.UI.Registros
                 NoTelefonoMaskedTextBox.Text = usuario.NoTelefono;
                 ContraseñaTextBox.Text = usuario.Contraseña;
                 FechadateTimePicker.Value = usuario.FechaCreacion;
+                AaminradioButton.Checked = usuario.pocision;
             }
         }
 
@@ -171,5 +177,11 @@ namespace SistemaBiblioteca.UI.Registros
         {
 
         }
+
+        private void RUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
