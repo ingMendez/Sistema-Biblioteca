@@ -23,31 +23,34 @@ namespace SistemaBiblioteca
         private void RegistrarLectorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RLector rlector = new RLector();
-            rlector.ShowDialog();
+            rlector.MdiParent = this;
+            rlector.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            registrarUsuarioToolStripMenuItem.Visible = Program.usuario.pocision;
+            //registrarUsuarioToolStripMenuItem.Visible = Program.usuario.pocision;
         }
 
         private void RegistrarLibroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RLibros rlibros = new RLibros();
-            rlibros.ShowDialog();
             rlibros.MdiParent = this;
+            rlibros.Show();
         }
 
         private void RegistrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RCategoria rcategoria = new RCategoria();
-            rcategoria.ShowDialog();
+            rcategoria.MdiParent = this;
+            rcategoria.Show();
         }
 
         private void RegistrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RUsuario rUsuario = new RUsuario();
-            rUsuario.ShowDialog();
+            rUsuario.MdiParent = this;
+            rUsuario.Show();
         }
 
        public void Activos()
@@ -61,7 +64,8 @@ namespace SistemaBiblioteca
         public void Loo()
         {
             RLogin log = new RLogin();
-            log.ShowDialog();
+            log.MdiParent = this;
+            log.Show();
 
         }
 
@@ -74,34 +78,37 @@ namespace SistemaBiblioteca
         private void RegistrarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RPrestamo prestamo = new RPrestamo();
-            prestamo.ShowDialog();
+            prestamo.MdiParent = this;
+            prestamo.Show();
+          
         }
 
         private void ConsultarLibrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CLibros Clibros = new CLibros();
-            Clibros.Show();
             Clibros.MdiParent = this;
+            Clibros.Show();
         }
 
         private void consultarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CUsuario CUsuario = new CUsuario();
-            CUsuario.Show();
             CUsuario.MdiParent = this;
+            CUsuario.Show();
         }
 
         private void ConsultarPrestamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CPrestamo cPrestamo = new CPrestamo();
-            cPrestamo.Show();
             cPrestamo.MdiParent = this;
+            cPrestamo.Show();
         }
 
         private void consultarLectorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CLector lector = new CLector();
-            lector.ShowDialog();
+            lector.MdiParent = this;
+            lector.Show();
         }
     }
 }

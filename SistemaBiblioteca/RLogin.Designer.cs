@@ -44,10 +44,11 @@
             // 
             // SalirButton
             // 
-            this.SalirButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SalirButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SalirButton.BackgroundImage")));
+            this.SalirButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.SalirButton.Location = new System.Drawing.Point(175, 185);
             this.SalirButton.Name = "SalirButton";
-            this.SalirButton.Size = new System.Drawing.Size(75, 23);
+            this.SalirButton.Size = new System.Drawing.Size(75, 37);
             this.SalirButton.TabIndex = 13;
             this.SalirButton.Text = "Salir";
             this.SalirButton.UseVisualStyleBackColor = true;
@@ -55,10 +56,11 @@
             // 
             // EntrarButton
             // 
-            this.EntrarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EntrarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EntrarButton.BackgroundImage")));
+            this.EntrarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EntrarButton.Location = new System.Drawing.Point(60, 185);
             this.EntrarButton.Name = "EntrarButton";
-            this.EntrarButton.Size = new System.Drawing.Size(75, 23);
+            this.EntrarButton.Size = new System.Drawing.Size(75, 37);
             this.EntrarButton.TabIndex = 12;
             this.EntrarButton.Text = "Entrar";
             this.EntrarButton.UseVisualStyleBackColor = true;
@@ -117,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(352, 288);
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.EntrarButton);

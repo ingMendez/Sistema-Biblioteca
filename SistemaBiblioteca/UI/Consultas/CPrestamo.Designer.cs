@@ -66,8 +66,8 @@
             this.Filtro_comboBox.Items.AddRange(new object[] {
             "todo",
             "ID",
-            "Nombre",
-            "Lector",
+            "Lector ID",
+            "matricula",
             "Fecha"});
             this.Filtro_comboBox.Location = new System.Drawing.Point(98, 54);
             this.Filtro_comboBox.Name = "Filtro_comboBox";

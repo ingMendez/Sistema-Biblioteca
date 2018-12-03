@@ -25,6 +25,47 @@ namespace SistemaBiblioteca.UI.Consultas
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Expression<Func<Prestamo, bool>> filtro = a => true;
+            int id;
+            switch (Filtro_comboBox.SelectedIndex)
+            {
+                case 0: /// todos
+                    break;
+                case 1:
+
+                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    filtro = a => a.PrestamoID == id;
+                    break;
+                case 2://lector
+                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    filtro = a => a.LectorID == id;
+                    // filtro = a => a.Email.Contains(Criterio_textBox.Text);
+
+                    break;
+                case 3://matriula
+                    id = Convert.ToInt32(Criterio_textBox.Text);
+                    filtro = a => a.Matricula == id;
+                    // filtro = a => a.Matricula.Contains(Criterio_textBox.Text);
+
+                    break;
+
+                case 4://Fecha
+                    filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+                    break;
+
+            }
+            /*Lista = repositorio.GetList(p => true);
+            prestamo = repositorio.GetList(filtro);
+            filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+            ConsultadataGridView.DataSource = prestamo;// repositorio.GetList(filtro);
+*/
+            prestamo = BLL.PrestamoBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = null;
+           // ConsultadataGridView.DataSource = prestamo;
+            filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+            ConsultadataGridView.DataSource = prestamo;
+
+            //  Consulta_dataGridView.DataSource = BLL.UsuarioBLL.GetList(filtro);
 
         }
 
@@ -83,15 +124,15 @@ namespace SistemaBiblioteca.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            PrestamoReporte reporte = new PrestamoReporte();
 
             if(prestamo.Count == 0)
             {
                 MessageBox.Show("No hay datos para presentar");
                 return;
             }
-            PrestamoReview prestamoReporte = new PrestamoReview(prestamo);
-            prestamoReporte.ShowDialog();
+           // PrestamoReporte reporte = new PrestamoReporte();
+            PrestamoReview prestamoReview = new PrestamoReview(prestamo);
+            prestamoReview.ShowDialog();
 
         }
 

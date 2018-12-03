@@ -38,19 +38,27 @@ namespace SistemaBiblioteca.UI.Consultas
 
                     filtro = a => a.Nombres.Contains(Criterio_textBox.Text);
                     break;
-
-                ///FECHA          
-                case 3:
-                    filtro = a => a.FechaCreacion >= Desde_dateTimePicker.Value.Date && a.FechaCreacion <= Hasta_dateTimePicker.Value.Date;
-
-                    break;
-                case 4://Email
+                case 3://Email
 
                     filtro = a => a.Email.Contains(Criterio_textBox.Text);
                     break;
+                case 4://Fecha
+                    filtro = a => a.FechaCreacion >= Desde_dateTimePicker.Value.Date && a.FechaCreacion <= Hasta_dateTimePicker.Value.Date;
+                    break;
 
             }
-            Consulta_dataGridView.DataSource = BLL.UsuarioBLL.GetList(filtro);
+            /*Lista = repositorio.GetList(p => true);
+            prestamo = repositorio.GetList(filtro);
+            filtro = a => a.Fecha >= Desde_dateTimePicker.Value.Date && a.Fecha <= Hasta_dateTimePicker.Value.Date;
+            ConsultadataGridView.DataSource = prestamo;// repositorio.GetList(filtro);
+*/
+            usuario = BLL.UsuarioBLL.GetList(filtro);
+            Consulta_dataGridView.DataSource = null;
+            Consulta_dataGridView.DataSource = usuario;
+            filtro = a => a.FechaCreacion >= Desde_dateTimePicker.Value.Date && a.FechaCreacion <= Hasta_dateTimePicker.Value.Date;
+            Consulta_dataGridView.DataSource = usuario;
+
+          //  Consulta_dataGridView.DataSource = BLL.UsuarioBLL.GetList(filtro);
 
         }
 
@@ -76,15 +84,15 @@ namespace SistemaBiblioteca.UI.Consultas
             {
                 Criterio_textBox.Visible = false;
                 ConsultanumericUpDown.Visible = true;
-                label3.Visible = false;
-                label4.Visible = false;
-                label5.Visible = false;
+               //// label3.Visible = false;
+               /// label4.Visible = false;
+               // label5.Visible = false;
 
-                Hasta_dateTimePicker.Visible = false;
-                Desde_dateTimePicker.Visible = false;
+                Hasta_dateTimePicker.Visible = true;
+                Desde_dateTimePicker.Visible = true;
 
                 Criterio_textBox.Visible = true;
-                label2.Visible = true;
+              //  label2.Visible = true;
                 // Criterio();
                 //Criterio_textBox = .Criterio_textBox();
 
@@ -93,9 +101,9 @@ namespace SistemaBiblioteca.UI.Consultas
             {
                 Criterio_textBox.Visible = true;
                 ConsultanumericUpDown.Visible = false;
-                label3.Visible = false;
-                label4.Visible = false;
-                label5.Visible = false;
+               // label3.Visible = false;
+               // label4.Visible = false;
+               // label5.Visible = false;
 
                 Hasta_dateTimePicker.Visible = true;
                 Desde_dateTimePicker.Visible = true;

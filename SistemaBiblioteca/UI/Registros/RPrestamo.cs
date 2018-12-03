@@ -74,7 +74,7 @@ namespace SistemaBiblioteca.UI.Registros
                 PrestamoID = Convert.ToInt32(prestamoidnumericUpDown.Value),
                 LectorID = Convert.ToInt32(LectorcomboBox.SelectedValue),
                 Fecha = FechadateTimePicker.Value,
-                Matricula = Convert.ToInt32(MatriculatextBox.Text)
+                Matricula = Convert.ToInt32(MatriculatextBox.Text.Replace("-",""))
             };
 
             foreach (DataGridViewRow item in PrestamoDetalleDataGridView.Rows)
@@ -177,7 +177,7 @@ namespace SistemaBiblioteca.UI.Registros
                     new PrestamoDetalle(
                        id: 0,
                          prestamoid: (int)prestamoidnumericUpDown.Value,
-                         matricula:(int)Convert.ToInt32(MatriculatextBox.Text),
+                         matricula:(int)Convert.ToInt32(MatriculatextBox.Text.Replace("-","")),
                          libroId: (int)LibrocomboBox.SelectedValue,
                          lectorid: (int)LectorcomboBox.SelectedValue
                      // fecha: FechadateTimePicker.Value

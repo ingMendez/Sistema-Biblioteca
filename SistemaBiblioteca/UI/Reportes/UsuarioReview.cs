@@ -23,10 +23,11 @@ namespace SistemaBiblioteca.UI.Reportes
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
 
-            UsuarioReportes usuario = new UsuarioReportes();
-            usuario.SetDataSource(usuario);
-            crystalReportViewer1.ReportSource = usuario;
-            usuario.Refresh();
+            UsuarioReportes usuarios = new UsuarioReportes();
+            usuarios.SetDataSource(usuario);
+            crystalReportViewer1.ReportSource = usuarios;
+            usuarios.Refresh();
+
         }
     }
 }

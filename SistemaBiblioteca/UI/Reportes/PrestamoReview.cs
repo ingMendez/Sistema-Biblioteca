@@ -13,7 +13,6 @@ namespace SistemaBiblioteca.UI.Reportes
     public partial class PrestamoReview : Form
     {
         private List<Prestamo> prestamo = new List<Prestamo>();
-
         public PrestamoReview(List<Prestamo>Lista)
         {
             InitializeComponent();
@@ -22,10 +21,10 @@ namespace SistemaBiblioteca.UI.Reportes
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            PrestamoReporte prestamoReview = new PrestamoReporte();
-            prestamoReview.SetDataSource(prestamo);
-            crystalReportViewer1.ReportSource = prestamoReview;
-            prestamoReview.Refresh();
+            PrestamoReporte prestamoreporte = new PrestamoReporte();
+            prestamoreporte.SetDataSource(prestamo);
+            crystalReportViewer1.ReportSource = prestamoreporte;
+            prestamoreporte.Refresh();
         }
     }
 }

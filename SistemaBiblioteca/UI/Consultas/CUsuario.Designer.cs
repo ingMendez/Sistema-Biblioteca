@@ -30,7 +30,6 @@
         {
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Desde_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Consulta_dataGridView = new System.Windows.Forms.DataGridView();
             this.ConsultanumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.checkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Consulta_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultanumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +64,6 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(210, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 59;
-            this.label5.Text = "Fecha";
             // 
             // Hasta_dateTimePicker
             // 
@@ -131,8 +122,8 @@
             "Todos",
             "ID",
             "Nombre",
-            "Fecha",
-            "Email"});
+            "Email",
+            "Fecha"});
             this.Filtro_comboBox.Location = new System.Drawing.Point(101, 12);
             this.Filtro_comboBox.Name = "Filtro_comboBox";
             this.Filtro_comboBox.Size = new System.Drawing.Size(121, 21);
@@ -164,16 +155,26 @@
             this.ConsultanumericUpDown.TabIndex = 62;
             this.ConsultanumericUpDown.Visible = false;
             // 
+            // checkBox
+            // 
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(253, 63);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(72, 17);
+            this.checkBox.TabIndex = 63;
+            this.checkBox.Text = "Por fecha";
+            this.checkBox.UseVisualStyleBackColor = true;
+            // 
             // CUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(558, 341);
+            this.Controls.Add(this.checkBox);
             this.Controls.Add(this.ConsultanumericUpDown);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.Hasta_dateTimePicker);
             this.Controls.Add(this.Desde_dateTimePicker);
             this.Controls.Add(this.label4);
@@ -197,7 +198,6 @@
 
         private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;
         private System.Windows.Forms.DateTimePicker Desde_dateTimePicker;
         private System.Windows.Forms.Label label4;
@@ -208,5 +208,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Consulta_dataGridView;
         private System.Windows.Forms.NumericUpDown ConsultanumericUpDown;
+        private System.Windows.Forms.CheckBox checkBox;
     }
 }

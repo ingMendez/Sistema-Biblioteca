@@ -20,7 +20,7 @@ namespace SistemaBiblioteca
             Application.SetCompatibleTextRenderingDefault(false);
             RLogin rg = new RLogin();
 
-            Application.Run(rg);
+            Application.Run(new Form1());
             if(rg.DialogResult == DialogResult.OK)
             {
                 rg.Dispose();
